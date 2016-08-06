@@ -34,3 +34,13 @@ Helmet has help from a lot of contributors.
   - Jon Buckley
     - [helmet#6](https://github.com/helmetjs/helmet/pull/6)
     - [helmet#11](https://github.com/helmetjs/helmet/pull/11)
+  - Dan Stroot
+    - [csp#16](https://github.com/helmetjs/csp/pull/16)
+  - [Ryan Cannon](https://ryancannon.com/)
+    - [csp#32](https://github.com/helmetjs/csp/issues/32)
+  - [Mo Binni](https://twitter.com/mobinni)
+    - [helmet#119](https://github.com/helmetjs/helmet/pull/119)
+  - [Matt Johansen](https://mattjay.github.io)
+    - [helmet#25](https://github.com/helmetjs/helmet/pull/25)
+  - [Nicholas Clawson](http://www.nickclaw.com/)
+    - [csp#26](https://github.com/helmetjs/csp/pull/26)
