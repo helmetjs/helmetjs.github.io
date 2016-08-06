@@ -3,7 +3,7 @@ layout: page
 title: Contributors
 permalink: /contributors/
 ---
-Helmet has help from a lot of contributors.
+Helmet has help from a lot of contributors. Thanks to everyone on this list!
 
 - Creator: [Adam Baldwin](http://andyet.net/team/baldwin)
 
