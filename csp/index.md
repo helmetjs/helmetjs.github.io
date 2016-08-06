@@ -19,6 +19,6 @@ There isn't one specific attack here. The thesis: you don't want anyone putting 
 Read more:
 
 The header
------
+----------
 
 Most modern browsers support a header called `Content-Security-Policy`, which is effectively a whitelist of things that are allowed to be on your page.
