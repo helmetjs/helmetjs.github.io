@@ -25,6 +25,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmet#11](https://github.com/helmetjs/helmet/pull/11)
   - [Matt Johansen](https://mattjay.github.io)
     - [helmet#25](https://github.com/helmetjs/helmet/pull/25)
+  - Matthew Finifter
+    - [csp#35](https://github.com/helmetjs/csp/pull/35)
   - [Mathias Bogaert](https://github.com/analytically)
     - [helmet#81](https://github.com/helmetjs/helmet/pull/81)
   - [Michael Kebbekus](https://github.com/makebbekus)
