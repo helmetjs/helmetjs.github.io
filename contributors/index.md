@@ -10,6 +10,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
 - Lead maintainer: [Evan Hahn](https://evanhahn.com)
 
 - Other contributors
+  - [Alberto Gimeno](http://gimenete.net/)
+    - [frameguard#2](https://github.com/helmetjs/frameguard/pull/2)
   - [Charlie Briggs](https://github.com/Limess)
     - [frameguard#9](https://github.com/helmetjs/frameguard/pull/9)
   - Dan Stroot
