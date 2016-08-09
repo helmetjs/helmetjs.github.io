@@ -51,6 +51,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [x-xss-protection#2](https://github.com/helmetjs/x-xss-protection/pull/2)
   - [Nimish Telang](http://nimish.telang.net)
     - [csp#31](https://github.com/helmetjs/csp/pull/31)
+  - [renehamburger](https://github.com/renehamburger)
+    - [helmet#16](https://github.com/helmetjs/helmet/pull/16)
   - [Ryan Cannon](https://ryancannon.com/)
     - [csp#32](https://github.com/helmetjs/csp/issues/32)
   - [Sakthipriyan Vairamani (thefourtheye)](http://thefourtheye.in/)
