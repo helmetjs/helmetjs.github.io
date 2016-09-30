@@ -1,5 +1,8 @@
-"Don't infer the MIME type": noSniff
-====================================
+---
+layout: page
+title: Don't Sniff Mimetype
+permalink: /middleware/dont-sniff-mimetype/
+---
 
 In short: `noSniff` helps prevent browsers from trying to guess ("sniff") the MIME type, which can have security implications. It does this by setting the `X-Content-Type-Options` header to `nosniff`.
 

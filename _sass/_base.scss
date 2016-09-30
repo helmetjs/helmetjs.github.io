@@ -35,6 +35,7 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
+    line-height: $base-line-height;
 }
 
 
@@ -45,6 +46,10 @@ ul, ol, dl, figure,
 img {
     max-width: 100%;
     vertical-align: middle;
+}
+
+p img {
+    border: 3px solid $grey-color;
 }
 
 
@@ -94,12 +99,8 @@ a {
     color: $brand-color;
     text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
     &:hover {
-        color: $text-color;
+        color: $brand-color;
         text-decoration: underline;
     }
 }
@@ -122,6 +123,24 @@ blockquote {
     }
 }
 
+/**
+ * Tables
+ */
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+tr {
+    border-top: 1px solid $grey-color-light;
+}
+
+th, td {
+    padding: 1em;
+    border: 1px solid $grey-color-light;
+}
 
 
 /**

