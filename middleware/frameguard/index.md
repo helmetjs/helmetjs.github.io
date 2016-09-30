@@ -58,7 +58,7 @@ The header has pretty good browser support: IE8+, Opera 10.50+, Safari 4+, Chrom
 Read more:
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options)
-- [Can I use page](http://caniuse.com/#feat=x-frame-options)
+- [Can I Use X-Frame-Options](http://caniuse.com/#feat=x-frame-options)
 
 The code
 --------
