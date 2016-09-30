@@ -2,30 +2,47 @@
  * Site header
  */
 .site-header {
-    border-bottom: 1px solid $grey-color-light;
-
     .wrapper {
         text-align: center;
+        border-bottom: 1px solid $grey-color-light;
     }
 }
 
 .site-title {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     line-height: 56px;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
     margin-bottom: 0;
-    text-transform: lowercase;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
 
     &,
+    &:hover,
+    &:active,
     &:visited {
         color: $grey-color-dark;
+        text-decoration: none;
     }
 }
 
 .site-logo {
     width: 48px;
     height: 48px;
+}
+
+.site-nav {
+    margin-top: 1em;
+
+    .wrapper {
+        padding-bottom: 1em;
+        text-align: center;
+    }
+
+    .page-link {
+        display: inline-block;
+        padding: 0.5em;
+    }
 }
 
 
