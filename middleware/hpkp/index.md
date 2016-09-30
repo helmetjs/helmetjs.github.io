@@ -72,7 +72,7 @@ app.use(hpkp({
 
 ### Including subdomains
 
-You can append the `includeSubdomains` directive with an option of the same name.
+You can append the `includeSubDomains` directive with an option of the same name.
 
 ```javascript
 // Sets "Public-Key-Pins: ...; includeSubDomains"
