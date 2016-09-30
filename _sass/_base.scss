@@ -90,6 +90,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
 
+h2 {
+    text-decoration: underline;
+}
+
+h3 {
+    color: $grey-color-dark;
+}
 
 
 /**
@@ -160,7 +167,8 @@ code {
 
 pre {
     padding: 8px 12px;
-    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 
     > code {
         border: 0;
