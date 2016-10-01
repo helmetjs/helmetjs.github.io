@@ -1,7 +1,7 @@
 ---
 layout: page
 title: DNS Prefetch Control
-permalink: /middleware/dns-prefetch-control/
+permalink: /docs/dns-prefetch-control/
 ---
 In short: this middleware lets you disable browsers' DNS prefetching by setting the `X-DNS-Prefetch-Control` header.
 

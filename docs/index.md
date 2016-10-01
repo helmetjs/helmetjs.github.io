@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Middleware
-permalink: /middleware/
+title: Docs
+permalink: /docs/
 ---
 Helmet is a collection of 11 middleware to help set some security headers.
 

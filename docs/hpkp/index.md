@@ -1,7 +1,7 @@
 ---
 layout: page
 title: HTTP Public Key Pinning
-permalink: /middleware/hpkp/
+permalink: /docs/hpkp/
 ---
 In short: the HTTP Public Key Pinning module helps you set the `Public-Key-Pins` header to prevent person-in-the-middle attacks.
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: XSS Filter
-permalink: /middleware/xss-filter/
+permalink: /docs/xss-filter/
 ---
 In short, the `xssFilter` middleware sets the `X-XSS-Protection` header to prevent reflected XSS attacks.
 

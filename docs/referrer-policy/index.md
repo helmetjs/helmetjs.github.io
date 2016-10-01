@@ -1,7 +1,7 @@
 ---
 layout: page
-title: IE No Open
-permalink: /middleware/ienoopen/
+title: Referrer Policy
+permalink: /docs/referrer-policy/
 ---
 In short:
 

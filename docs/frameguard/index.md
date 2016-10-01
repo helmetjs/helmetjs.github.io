@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Frameguard
-permalink: /middleware/frameguard/
+permalink: /docs/frameguard/
 ---
 In short: Frameguard mitigates clickjacking attacks by setting the `X-Frame-Options` header.
 

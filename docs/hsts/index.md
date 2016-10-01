@@ -1,7 +1,7 @@
 ---
 layout: page
 title: HSTS
-permalink: /middleware/hsts/
+permalink: /docs/hsts/
 ---
 In short: this module sets the `Strict-Transport-Security` header to keep your users on HTTPS.
 

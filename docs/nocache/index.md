@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Nocache
-permalink: /middleware/nocache/
+permalink: /docs/nocache/
 ---
 In short:
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hide Powered-By
-permalink: /middleware/hide-powered-by/
+permalink: /docs/hide-powered-by/
 ---
 In short: The Hide Powered-By middleware removes the `X-Powered-By` header to make it slightly harder for attackers to see what potentially-vulnerable technology powers your site.
 

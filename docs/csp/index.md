@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Content Security Policy
-permalink: /middleware/csp/
+permalink: /docs/csp/
 ---
 In short: the CSP module sets the `Content-Security-Policy` header which can help protect against malicious injection of JavaScript, CSS, plugins, and more.
 
