@@ -2,6 +2,7 @@
  * Site header
  */
 .site-header {
+    padding-top: 1.5em;
     .wrapper {
         text-align: center;
         border-bottom: 1px solid $grey-color-light;
@@ -32,10 +33,10 @@
 }
 
 .site-nav {
-    margin-top: 1em;
+    margin-top: 0.5em;
 
     .wrapper {
-        padding-bottom: 1em;
+        padding-bottom: 0.5em;
         text-align: center;
     }
 
