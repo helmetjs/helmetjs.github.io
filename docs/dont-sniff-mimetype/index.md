@@ -38,8 +38,9 @@ The `X-Content-Type-Options` header tells browsers not to sniff MIME types. When
 
 Read more:
 
-- ["Reducing MIME type security risks" on MSDN](https://msdn.microsoft.com/en-us/library/gg622941(v=vs.85).aspx)
 - ["What is 'X-Content-Type-Options=nosniff'?" on Stack Overflow](https://stackoverflow.com/questions/18337630/)
+- ["Reducing MIME type security risks" on MSDN](https://msdn.microsoft.com/en-us/library/gg622941(v=vs.85).aspx)
+- ["IE8 Security Part V: Comprehensive Protection" on MSDN](https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/)
 
 The code
 --------
