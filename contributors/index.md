@@ -19,6 +19,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [hpkp#2](https://github.com/helmetjs/hpkp/pull/2)
   - [Charlie Briggs](https://github.com/Limess)
     - [frameguard#9](https://github.com/helmetjs/frameguard/pull/9)
+  - [Cole Murray](http://murraycole.com/)
+    - [helmet#125](https://github.com/helmetjs/helmet/pull/125)
   - Dan Stroot
     - [csp#16](https://github.com/helmetjs/csp/pull/16)
   - [Eli Golding](https://github.com/eligolding)
@@ -51,6 +53,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [x-xss-protection#2](https://github.com/helmetjs/x-xss-protection/pull/2)
   - [Nimish Telang](http://nimish.telang.net)
     - [csp#31](https://github.com/helmetjs/csp/pull/31)
+  - [Paul Wright](https://github.com/pwright08)
+    - [hsts#13](https://github.com/helmetjs/hsts/pull/13)
   - [renehamburger](https://github.com/renehamburger)
     - [helmet#16](https://github.com/helmetjs/helmet/pull/16)
   - [Ryan Cannon](https://ryancannon.com/)
