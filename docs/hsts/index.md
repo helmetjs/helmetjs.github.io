@@ -110,8 +110,11 @@ Google lets you submit your site for baked-into-Chrome HSTS by adding `preload` 
 
 ```javascript
 app.use(hsts({
-  maxAge: 10886400000,     // Must be at least 18 weeks to be approved by Google
-  includeSubDomains: true, // Must be enabled to be approved by Google
+  // Must be at least 18 weeks to be approved by Google
+  maxAge: 10886400,
+
+  // Must be enabled to be approved by Google
+  includeSubDomains: true,
   preload: true
 }))
 ```
