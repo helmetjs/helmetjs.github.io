@@ -42,10 +42,10 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install ienoopen" to get the ienoopen package.
-var ienoopen = require('ienoopen')
+var ieNoOpen = require('ienoopen')
 
 // Sets "X-Download-Options: noopen".
-app.use(ienoopen())
+app.use(ieNoOpen())
 ```
 
 This header is included in the default Helmet bundle.
