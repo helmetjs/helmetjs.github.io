@@ -70,6 +70,8 @@ app.use(hpkp({
 }))
 ```
 
+Don't let these get out of sync with your certs! It's also recommended to test your HPKP deployment in `reportOnly` mode, or alternatively, to use a very short `maxAge` until you're confident your deployment is correct.
+
 ### Including subdomains
 
 You can append the `includeSubDomains` directive with an option of the same name.
