@@ -56,9 +56,9 @@ This tells browsers to detect and block reflected XSS.
 
 This header causes some *even worse* security vulnerabilities in older versions of Internet Explorer, so it's wise to disable it there.
 
-- ["TODO" on MSDN](http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx)
-- [TODO](http://hackademix.net/2009/11/21/ies-xss-filter-creates-xss-vulnerabilities/)
-- [TODO](http://technet.microsoft.com/en-us/security/bulletin/MS10-002)
+- ["Controlling the XSS Filter" on MSDN](http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx)
+- ["IE's XSS Filter Creates XSS Vulnerabilities"](http://hackademix.net/2009/11/21/ies-xss-filter-creates-xss-vulnerabilities/)
+- ["XSS Filter Script Handling Vulnerability - CVE-2009-4074"](https://technet.microsoft.com/library/security/ms10-002#XSS%20Filter%20Script%20Handling%20Vulnerability%20-%20CVE-2009-4074)
 
 The code
 --------
