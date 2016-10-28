@@ -44,7 +44,7 @@ You can use this module as part of Helmet:
 // Make sure you run "npm install helmet" to get the Helmet package.
 var helmet = require('helmet')
 
-// Sets "Strict-Transport-Security: max-age=5184000".
+// Sets "Strict-Transport-Security: max-age=5184000; includeSubDomains".
 var sixtyDaysInSeconds = 5184000
 app.use(helmet.hsts({
   maxAge: sixtyDaysInSeconds
@@ -57,7 +57,7 @@ You can also use it as a standalone module:
 // Make sure you run "npm install hsts" to get the hsts package.
 var hsts = require('hsts')
 
-// Sets "Strict-Transport-Security: max-age=5184000".
+// Sets "Strict-Transport-Security: max-age=5184000; includeSubDomains".
 var sixtyDaysInSeconds = 5184000
 app.use(hsts({
   maxAge: sixtyDaysInSeconds
@@ -66,13 +66,13 @@ app.use(hsts({
 
 ### Including subdomains
 
-You can include subdomains by supplying an option:
+The `includeSubDomains` directive is included by default. To opt out, set the `includeSubDomains` option to `false`.
 
 ```javascript
-// Sets "Strict-Transport-Security: max-age=5184000; includeSubDomains".
+// Sets "Strict-Transport-Security: max-age=5184000".
 app.use(helmet.hsts({
   maxAge: sixtyDaysInSeconds,
-  includeSubDomains: true
+  includeSubDomains: false
 ))
 ```
 
