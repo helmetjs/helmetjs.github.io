@@ -25,22 +25,20 @@ That's it! Helmet will set various HTTP headers to help protect your app.
 How it works
 ============
 
-Helmet is really just a collection of 10 smaller pieces of middleware that set HTTP headers.
+Helmet is a collection of 11 smaller middleware functions that set HTTP headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
 
-* contentSecurityPolicy for setting Content Security Policy
-* dnsPrefetchControl controls browser DNS prefetching
-* frameguard to prevent clickjacking
-* hidePoweredBy to remove the X-Powered-By header
-* hpkp for HTTP Public Key Pinning
-* hsts for HTTP Strict Transport Security
-* ieNoOpen sets X-Download-Options for IE8+
-* noCache to disable client-side caching
-* noSniff to keep clients from sniffing the MIME type
-* xssFilter adds some small XSS protections
+You can see more in [the documentation](/docs).
 
-`app.use(helmet())` will include 7 of the 10, leaving out `contentSecurityPolicy`, `hpkp`, and `noCache`. You can also use each module individually, like this:
-
-```javascript
-app.use(helmet.noCache())
-app.use(helmet.frameguard())
-```
+| Module | Default? |
+|---|---|
+| [contentSecurityPolicy](/docs/csp/) for setting Content Security Policy |  |
+| [dnsPrefetchControl](/docs/dns-prefetch-control) controls browser DNS prefetching | ✓ |
+| [frameguard](/docs/frameguard/) to prevent clickjacking | ✓ |
+| [hidePoweredBy](/docs/hide-powered-by) to remove the X-Powered-By header | ✓ |
+| [hpkp](/docs/hpkp/) for HTTP Public Key Pinning |  |
+| [hsts](/docs/hsts/) for HTTP Strict Transport Security | ✓ |
+| [ieNoOpen](/docs/ienoopen) sets X-Download-Options for IE8+ | ✓ |
+| [noCache](/docs/nocache/) to disable client-side caching |  |
+| [noSniff](/docs/dont-sniff-mimetype) to keep clients from sniffing the MIME type | ✓ |
+| [referrerPolicy](/docs/referrer-policy) to hide the Referer header |  |
+| [xssFilter](/docs/xss-filter) adds some small XSS protections | ✓ |
