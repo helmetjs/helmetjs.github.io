@@ -64,6 +64,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmet#63](https://github.com/helmetjs/helmet/pull/63)
   - [Shane Tomlinson](https://shanetomlinson.com)
     - [csp#43](https://github.com/helmetjs/csp/pull/43)
+  - [Tara Vancil](https://taravancil.com)
+    - [helmet#142](https://github.com/helmetjs/helmet/pull/142)
   - [Teppei Sato](https://github.com/teppeis)
     - [csp#4](https://github.com/helmetjs/csp/pull/4)
     - [csp#5](https://github.com/helmetjs/csp/pull/5)
