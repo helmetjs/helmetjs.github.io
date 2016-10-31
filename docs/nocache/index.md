@@ -50,7 +50,7 @@ app.use(helmet.noCache())
 You can also use it as a standalone module:
 
 ```javascript
-// Make sure you run "npm install TODO" to get the TODO package.
+// Make sure you run "npm install nocache" to get the nocache package.
 var noCache = require('nocache')
 
 app.use(noCache())
