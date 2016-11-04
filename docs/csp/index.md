@@ -65,7 +65,7 @@ You can use this module as part of Helmet:
 // Make sure you run "npm install helmet" to get the Helmet package.
 var helmet = require('helmet')
 
-app.use(helmet.csp({
+app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
     styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com']
