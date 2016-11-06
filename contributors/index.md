@@ -71,5 +71,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [csp#5](https://github.com/helmetjs/csp/pull/5)
   - [Timofey Dergachev](https://exeto.me/en)
     - [hpkp#9](https://github.com/helmetjs/hpkp/pull/9)
+  - [Jason Karns](https://jasonkarns.com)
+    - [helmetjs.github.io#20](https://github.com/helmetjs/helmetjs.github.io/pull/20)
   - Tom Delmas
     - [hpkp#5](https://github.com/helmetjs/hpkp/pull/5)
