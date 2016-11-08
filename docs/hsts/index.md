@@ -48,7 +48,7 @@ var helmet = require('helmet')
 var sixtyDaysInSeconds = 5184000
 app.use(helmet.hsts({
   maxAge: sixtyDaysInSeconds
-))
+}))
 ```
 
 You can also use it as a standalone module:
@@ -61,7 +61,7 @@ var hsts = require('hsts')
 var sixtyDaysInSeconds = 5184000
 app.use(hsts({
   maxAge: sixtyDaysInSeconds
-))
+}))
 ```
 
 ### Including subdomains
@@ -73,7 +73,7 @@ The `includeSubDomains` directive is included by default. To opt out, set the `i
 app.use(helmet.hsts({
   maxAge: sixtyDaysInSeconds,
   includeSubDomains: false
-))
+}))
 ```
 
 ### Setting the header conditionally
