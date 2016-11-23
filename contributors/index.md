@@ -39,7 +39,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Matt Johansen](https://mattjay.github.io)
     - [helmet#25](https://github.com/helmetjs/helmet/pull/25)
   - Matthew Fernando Garcia
-    - [content-security-policy-builder](https://github.com/helmetjs/content-security-policy-builder/pull/4)
+    - [content-security-policy-builder#4](https://github.com/helmetjs/content-security-policy-builder/pull/4)
   - Matthew Finifter
     - [csp#35](https://github.com/helmetjs/csp/pull/35)
   - [Mathias Bogaert](https://github.com/analytically)
