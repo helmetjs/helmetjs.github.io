@@ -26,6 +26,8 @@ The `Strict-Transport-Security` HTTP header tells browsers to stick with HTTPS a
 Strict-Transport-Security: max-age=5184000
 ```
 
+Note that the header won't tell users on HTTP to *switch* to HTTPS, it will just tell HTTPS users to stick around. You can enforce HTTPS with the [express-enforces-ssl](https://github.com/aredo/express-enforces-ssl) module.
+
 Read more:
 
 - [Specification](https://tools.ietf.org/html/rfc6797)
