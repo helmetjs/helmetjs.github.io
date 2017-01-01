@@ -81,3 +81,5 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [hsts#14](https://github.com/helmetjs/hsts/pull/14)
   - [Victor Brouk](https://github.com/vintik)
     - [helmetjs.github.io#21](https://github.com/helmetjs/helmetjs.github.io/pull/21)
+  - [Partha Ramanujam](https://www.npmjs.com/~partharamanujam)
+    - [referrer-policy#2](https://github.com/helmetjs/referrer-policy/pull/2)
