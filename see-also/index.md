@@ -12,6 +12,7 @@ Helmet only deals with HTTP headers, but there are a number of other helpful sec
 
 This module also exists in other environments. Some are direct ports where others are similar modules.
 
-* Crystal programming language: [crystal-helmet](https://github.com/EvanHahn/crystal-helmet)
-* Go programming language: [secure](https://github.com/unrolled/secure)
-* Koa Node web framework: [koa-helmet](https://github.com/venables/koa-helmet)
+* Crystal: [crystal-helmet](https://github.com/EvanHahn/crystal-helmet)
+* Flask (Python framework): [Talisman](https://github.com/GoogleCloudPlatform/flask-talisman)
+* Go: [secure](https://github.com/unrolled/secure)
+* Koa (Node framework): [koa-helmet](https://github.com/venables/koa-helmet)
