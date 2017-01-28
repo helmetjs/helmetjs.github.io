@@ -53,7 +53,7 @@ Or you can require the individual module:
 ```javascript
 var hidePoweredBy = require('hide-powered-by')
 
-app.use(helmet.hidePoweredBy())
+app.use(hidePoweredBy())
 ```
 
 You can also *lie* in this header to throw a hacker off the scent. For example, to make it look like your site is powered by PHP:
