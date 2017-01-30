@@ -62,7 +62,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install referrer-policy" to get the referrer-policy package.
-var referrer-policy = require('referrer-policy')
+var referrerPolicy = require('referrer-policy')
 
 // Sets "Referrer-Policy: no-referrer".
 app.use(referrerPolicy({ policy: 'no-referrer' }))
