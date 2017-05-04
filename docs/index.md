@@ -3,7 +3,7 @@ layout: page
 title: Docs
 permalink: /docs/
 ---
-Helmet is a collection of 11 middleware to help set some security headers.
+Helmet is a collection of 12 middleware to help set some security headers.
 
 First, run `npm install helmet --save` for your app. Then, in an Express (or Connect) app:
 
@@ -52,6 +52,7 @@ Visit each module's page to learn more.
 | Module | Included by default? |
 |---|---|
 | [contentSecurityPolicy](csp) for setting Content Security Policy |  |
+| [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
 | [dnsPrefetchControl](dns-prefetch-control) controls browser DNS prefetching | ✓ |
 | [frameguard](frameguard) to prevent clickjacking | ✓ |
 | [hidePoweredBy](hide-powered-by) to remove the X-Powered-By header | ✓ |
