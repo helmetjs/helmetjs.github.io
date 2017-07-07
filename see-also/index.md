@@ -17,3 +17,4 @@ This module also exists in other environments. Some are direct ports where other
 * Flask (Python framework): [Talisman](https://github.com/GoogleCloudPlatform/flask-talisman)
 * Go: [secure](https://github.com/unrolled/secure)
 * Koa (Node framework): [koa-helmet](https://github.com/venables/koa-helmet)
+* Ring (Clojure framework): [ring-secure-headers](https://github.com/EvanHahn/ring-secure-headers)
