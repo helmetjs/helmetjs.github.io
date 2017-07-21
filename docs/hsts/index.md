@@ -80,9 +80,7 @@ app.use(helmet.hsts({
 
 ### Setting the header conditionally
 
-By default, this header is set if `req.secure` is `true`. `req.secure` is a boolean auto-populated by Express. If you're not using Express, that value won't necessarily be set, so you have two options.
-
-First, you can choose to set the header conditionally with the `setIf` option. This is a function that will be passed the request and response objects. It should return `true` if the header should be set and `false` otherwise.
+This header will always be set because [the header is ignored in insecure HTTP](https://tools.ietf.org/html/rfc6797#section-8.1). If you wish to set it conditionally, use `setIf`, a function that should return `true` if the header should be set and `false` otherwise.
 
 ```javascript
 app.use(helmet.hsts({
@@ -94,15 +92,6 @@ app.use(helmet.hsts({
       return false
     }
   }
-}))
-```
-
-Second, you can force the header to *always* be set:
-
-```javascript
-app.use(helmet.hsts({
-  // ...
-  force: true
 }))
 ```
 
