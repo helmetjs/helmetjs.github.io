@@ -106,8 +106,6 @@ app.use(csp({
 })
 ```
 
-The `report-uri` directive will also set the new `report-to` directive for forwards compatibility.
-
 ### CSP violations
 
 If you've specified a `reportUri`, browsers will POST any CSP violations to your server. Here's a simple example of an Express route that handles those reports:
