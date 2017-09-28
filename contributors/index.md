@@ -5,7 +5,7 @@ permalink: /contributors/
 ---
 Helmet has help from a lot of contributors. Thanks to everyone on this list!
 
-- Creator: [Adam Baldwin](http://andyet.net/team/baldwin)
+- Creator: [Adam Baldwin](https://andyet.net/team/baldwin/)
 
 - Lead maintainer: [Evan Hahn](https://evanhahn.com)
 
@@ -19,7 +19,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [hpkp#2](https://github.com/helmetjs/hpkp/pull/2)
   - [Charlie Briggs](https://github.com/Limess)
     - [frameguard#9](https://github.com/helmetjs/frameguard/pull/9)
-  - [Cole Murray](http://murraycole.com/)
+  - [Cole Murray](https://murraycole.com/)
     - [helmet#125](https://github.com/helmetjs/helmet/pull/125)
   - Dan Stroot
     - [csp#16](https://github.com/helmetjs/csp/pull/16)
@@ -30,7 +30,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Gerges Beshay](https://gerges.beshay.org)
     - [helmetjs.github.io#25](https://github.com/helmetjs/helmetjs.github.io/pull/25)
     - [helmetjs.github.io#26](https://github.com/helmetjs/helmetjs.github.io/pull/26)
-  - [Golo Roden](golo.roden@thenativeweb.io)
+  - [Golo Roden](mailto:golo.roden@thenativeweb.io)
     - [nocache#1](https://github.com/helmetjs/nocache/pull/1)
   - [Jason Karns](https://jasonkarns.com)
     - [helmetjs.github.io#20](https://github.com/helmetjs/helmetjs.github.io/pull/20)
@@ -55,7 +55,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmet#119](https://github.com/helmetjs/helmet/pull/119)
   - [Nathan Vander Wilt](http://exts.ch)
     - [helmet#29](https://github.com/helmetjs/helmet/pull/29)
-  - [Nicholas Clawson](http://www.nickclaw.com/)
+  - [Nicholas Clawson](https://www.nickclaw.com/)
     - [csp#26](https://github.com/helmetjs/csp/pull/26)
   - [Nicolai Kamenzky](https://github.com/analog-nico)
     - [nocache#5](https://github.com/helmetjs/nocache/pull/5)
@@ -80,7 +80,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Teppei Sato](https://github.com/teppeis)
     - [csp#4](https://github.com/helmetjs/csp/pull/4)
     - [csp#5](https://github.com/helmetjs/csp/pull/5)
-  - [Timofey Dergachev](https://exeto.me/en)
+  - [Timofey Dergachev](https://exeto.me/en/)
     - [hpkp#9](https://github.com/helmetjs/hpkp/pull/9)
   - Tom Delmas
     - [hpkp#5](https://github.com/helmetjs/hpkp/pull/5)
