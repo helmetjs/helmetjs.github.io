@@ -106,6 +106,33 @@ app.use(csp({
 })
 ```
 
+Directives can be kebab-cased (like `script-src`) or camel-cased (like `scriptSrc`); they are equivalent.
+
+The following directives are supported:
+
+* `base-uri` or `baseUri`
+* `block-all-mixed-content` or `blockAllMixedContent`
+* `child-src` or `childSrc`
+* `connect-src` or `connectSrc`
+* `default-src` or `defaultSrc`
+* `font-src` or `fontSrc`
+* `form-action` or `formAction`
+* `frame-ancestors` or `frameAncestors`
+* `frame-src` or `frameSrc`
+* `img-src` or `imgSrc`
+* `manifest-src` or `manifestSrc`
+* `media-src` or `mediaSrc`
+* `object-src` or `objectSrc`
+* `plugin-types` or `pluginTypes`
+* `report-to` or `reportTo`
+* `report-uri` or `reportUri`
+* `require-sri-for` or `requireSriFor`
+* `sandbox` or `sandbox`
+* `script-src` or `scriptSrc`
+* `style-src` or `styleSrc`
+* `upgrade-insecure-requests` or `upgradeInsecureRequests`
+* `worker-src` or `workerSrc`
+
 ### CSP violations
 
 If you've specified a `reportUri`, browsers will POST any CSP violations to your server. Here's a simple example of an Express route that handles those reports:
