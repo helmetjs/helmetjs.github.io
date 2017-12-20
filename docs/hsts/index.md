@@ -97,14 +97,14 @@ app.use(helmet.hsts({
 
 ### Preloading HSTS in Chrome
 
-Google lets you submit your site for baked-into-Chrome HSTS by adding `preload` to the header. You can add that with the following code, and then submit your site to the Chrome team at [hstspreload.appspot.com](https://hstspreload.appspot.com/).
+Some browsers let you submit your site's HSTS to be baked into the browser. You can add `preload` to the header with the following code. You can check your eligibility and submit your site at [hstspreload.org](https://hstspreload.org/).
 
 ```javascript
 app.use(hsts({
-  // Must be at least 18 weeks to be approved by Google
-  maxAge: 10886400,
+  // Must be at least 1 year to be approved
+  maxAge: 31536000,
 
-  // Must be enabled to be approved by Google
+  // Must be enabled to be approved
   includeSubDomains: true,
   preload: true
 }))
