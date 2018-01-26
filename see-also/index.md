@@ -9,7 +9,6 @@ Helmet only deals with HTTP headers, but there are a number of other helpful sec
 * [express-content-length-validator](https://github.com/ericmdantas/express-content-length-validator)
 * [express-enforces-ssl](https://github.com/aredo/express-enforces-ssl)
 * [hpp](https://www.npmjs.com/package/hpp)
-* [lusca](https://github.com/krakenjs/lusca)
 
 This module also exists in other environments. Some are direct ports where others are similar modules.
 
@@ -18,3 +17,9 @@ This module also exists in other environments. Some are direct ports where other
 * Go: [secure](https://github.com/unrolled/secure)
 * Koa (Node framework): [koa-helmet](https://github.com/venables/koa-helmet)
 * Ring (Clojure framework): [ring-secure-headers](https://github.com/EvanHahn/ring-secure-headers)
+* Ruby (and Rails): [Secure Headers](https://github.com/twitter/secureheaders)
+
+There are also other modules like Helmet for Node if you don't like us:
+
+* [hood](https://github.com/seanmonstar/hood)
+* [lusca](https://github.com/krakenjs/lusca)
