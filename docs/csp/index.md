@@ -97,13 +97,14 @@ All of your CSP directives (like `default-src`, `style-src`) are placed under th
 app.use(csp({
   directives: {
     defaultSrc: ["'self'", 'default.com'],
-    styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com'],
-    imgSrc: ['img.com', 'data:'],
+    scriptSrc: ["'self'", "'unsafe-inline'"],
     sandbox: ['allow-forms', 'allow-scripts'],
     reportUri: '/report-violation',
-    objectSrc: [], // An empty array allows nothing through
+    objectSrc: ["'none'"],
+    upgradeInsecureRequests: true,
+    workerSrc: false  // This is not set.
   }
-})
+}))
 ```
 
 Directives can be kebab-cased (like `script-src`) or camel-cased (like `scriptSrc`); they are equivalent.
