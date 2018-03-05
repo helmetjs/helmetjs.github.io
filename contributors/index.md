@@ -21,6 +21,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [frameguard#9](https://github.com/helmetjs/frameguard/pull/9)
   - [Cole Murray](https://murraycole.com/)
     - [helmet#125](https://github.com/helmetjs/helmet/pull/125)
+  - [Daniel Sieradski](https://github.com/selfagency)
+    - [x-xss-protection#5](https://github.com/helmetjs/x-xss-protection/pull/5)
   - Dan Stroot
     - [csp#16](https://github.com/helmetjs/csp/pull/16)
   - [Eli Golding](https://github.com/eligolding)
