@@ -34,6 +34,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmetjs.github.io#26](https://github.com/helmetjs/helmetjs.github.io/pull/26)
   - [Golo Roden](mailto:golo.roden@thenativeweb.io)
     - [nocache#1](https://github.com/helmetjs/nocache/pull/1)
+  - [Isaac Nassimi](https://www.blocktalk.com/)
+    - [csp#45](https://github.com/helmetjs/csp/pull/45)
   - [Jason Karns](https://jasonkarns.com)
     - [helmetjs.github.io#20](https://github.com/helmetjs/helmetjs.github.io/pull/20)
   - Joe Lutz
