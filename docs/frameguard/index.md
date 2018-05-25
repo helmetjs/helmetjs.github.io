@@ -59,6 +59,7 @@ Read more:
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options)
 - [Can I Use X-Frame-Options](http://caniuse.com/#feat=x-frame-options)
+- ["Google YOLO"](https://blog.innerht.ml/google-yolo/)
 
 The code
 --------
