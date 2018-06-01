@@ -45,6 +45,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmet#11](https://github.com/helmetjs/helmet/pull/11)
   - [Josh Junon](https://github.com/qix-)
     - [helmet#152](https://github.com/helmetjs/helmet/pull/152)
+  - [Jucke](https://github.com/jucke)
+    - [helmet#152](https://github.com/helmetjs/helmetjs.github.io/pull/32)
   - [Matt Johansen](https://mattjay.github.io)
     - [helmet#25](https://github.com/helmetjs/helmet/pull/25)
   - Matthew Fernando Garcia
