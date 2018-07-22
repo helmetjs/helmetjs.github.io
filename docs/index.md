@@ -52,8 +52,9 @@ Visit each module's page to learn more.
 | Module | Included by default? |
 |---|---|
 | [contentSecurityPolicy](csp) for setting Content Security Policy |  |
-| [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
+| [crossdomain](crossdomain) for handling Adobe products' crossdomain requests |  |
 | [dnsPrefetchControl](dns-prefetch-control) controls browser DNS prefetching | ✓ |
+| [expectCt](expect-ct) for handling Certificate Transparency |  |
 | [frameguard](frameguard) to prevent clickjacking | ✓ |
 | [hidePoweredBy](hide-powered-by) to remove the X-Powered-By header | ✓ |
 | [hpkp](hpkp) for HTTP Public Key Pinning |  |

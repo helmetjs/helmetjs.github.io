@@ -25,15 +25,16 @@ That's it! Helmet will set various HTTP headers to help protect your app.
 How it works
 ============
 
-Helmet is a collection of 12 smaller middleware functions that set HTTP headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
+Helmet is a collection of 13 smaller middleware functions that set HTTP headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
 
 You can see more in [the documentation](/docs).
 
 | Module | Default? |
 |---|---|
 | [contentSecurityPolicy](/docs/csp/) for setting Content Security Policy |  |
-| [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
+| [crossdomain](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
 | [dnsPrefetchControl](/docs/dns-prefetch-control) controls browser DNS prefetching | ✓ |
+| [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
 | [frameguard](/docs/frameguard/) to prevent clickjacking | ✓ |
 | [hidePoweredBy](/docs/hide-powered-by) to remove the X-Powered-By header | ✓ |
 | [hpkp](/docs/hpkp/) for HTTP Public Key Pinning |  |
