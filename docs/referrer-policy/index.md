@@ -25,13 +25,13 @@ The new [`Referrer-Policy` HTTP header](https://www.w3.org/TR/referrer-policy/#r
 For example, when supported browsers see this header, they will set no `Referer` header at all:
 
 ```
-Referrer-Header: no-referrer
+Referrer-Policy: no-referrer
 ```
 
 There are other directives, too. `same-origin`, for example, will only send the `Referer` header for pages on the same origin.
 
 ```
-Referrer-Header: same-origin
+Referrer-Policy: same-origin
 ```
 
 You can see the full list of directives on [the specification](https://www.w3.org/TR/referrer-policy/#referrer-policies).
