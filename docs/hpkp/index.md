@@ -3,9 +3,9 @@ layout: page
 title: HTTP Public Key Pinning
 permalink: /docs/hpkp/
 ---
-In short: the HTTP Public Key Pinning module helps you set the `Public-Key-Pins` header to prevent person-in-the-middle attacks.
+In short: the HTTP Public Key Pinning module helps you set the `Public-Key-Pins` header to prevent person-in-the-middle attacks. **Usage of this header (and therefore this middleware) is not recommended.**
 
-**Be very careful when deploying this**—you can easily misuse this header and cause problems. [Chrome intends to drop support for HPKP](https://github.com/helmetjs/hpkp/issues/14) citing risks of misuse.
+**Be very careful when deploying this**—you can easily misuse this header and cause problems. Chrome dropped support for HPKP citing risks of misuse.
 
 The attack
 ----------
@@ -33,6 +33,8 @@ Public-Key-Pins: pin-sha256="cUPcTAZWKaASuYWhhneDttWpY3oBAkE3h2+soZS7sWs="; pin-
 
 Your browser will store those for 60 days. If the public keys are ever mismatched with those SHA-256 hashes, your browser will assume things aren't correct.
 
+Note that Chrome no longer supports this header; it is simply ignored.
+
 Read more:
 
 - [Specification](https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/)
@@ -44,7 +46,7 @@ The code
 
 Helmet's HPKP module will set the `Public-Key-Pins` header.
 
-**Warning: be very careful when using this**—you can easily make a mistake and cause problems. [Chrome intends to drop support for HPKP in Chrome 69.](https://github.com/helmetjs/hpkp/issues/14)
+**Warning: be very careful when using this**—you can easily make a mistake and cause problems. Chrome has dropped support for this.
 
 You can use this module as part of Helmet:
 
