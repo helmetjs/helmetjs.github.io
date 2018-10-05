@@ -63,7 +63,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 app.use(helmet.contentSecurityPolicy({
   directives: {
@@ -77,7 +77,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install helmet-csp" to get the csp package.
-var csp = require('helmet-csp')
+const csp = require('helmet-csp')
 
 app.use(csp({
   directives: {
@@ -145,7 +145,7 @@ app.use(bodyParser.json({
   type: ['json', 'application/csp-report']
 }))
 
-app.post('/report-violation', function (req, res) {
+app.post('/report-violation', (req, res) => {
   if (req.body) {
     console.log('CSP Violation: ', req.body)
   } else {
@@ -178,13 +178,7 @@ app.use(csp({
   directives: {
     // ...
   },
-  reportOnly: function (req, res) {
-    if (req.query.cspmode === 'debug') {
-      return true
-    } else {
-      return false
-    }
-  }
+  reportOnly: (req, res) => req.query.cspmode === 'debug'
 })
 ```
 
@@ -230,7 +224,7 @@ app.use(csp({
 You can dynamically generate nonces to allow inline `<script>` tags to be safely evaluated. Here's a simple example:
 
 ```js
-var uuidv4 = require('uuid/v4')
+const uuidv4 = require('uuid/v4')
 
 app.use(function (req, res, next) {
   res.locals.nonce = uuidv4()
@@ -241,15 +235,13 @@ app.use(csp({
   directives: {
     scriptSrc: [
       "'self'",
-      function (req, res) {
-        return "'nonce-" + res.locals.nonce + "'"  // 'nonce-614d9122-d5b0-4760-aecf-3a5d17cf0ac9'
-      }
+      (req, res) => `'nonce-${res.locals.nonce}'`  // 'nonce-614d9122-d5b0-4760-aecf-3a5d17cf0ac9'
     ]
   }
 }))
 
 app.use(function (req, res) {
-  res.end('<script nonce="' + res.locals.nonce + '">alert(1 + 1);</script>')
+  res.end(`<script nonce="${res.locals.nonce}">alert(1 + 1);</script>`)
 })
 ```
 

@@ -69,7 +69,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 // Sets "X-XSS-Protection: 1; mode=block".
 app.use(helmet.xssFilter())
@@ -79,7 +79,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install x-xss-protection" to get this package.
-var xssFilter = require('x-xss-protection')
+const xssFilter = require('x-xss-protection')
 
 // Sets "X-XSS-Protection: 1; mode=block".
 app.use(xssFilter())

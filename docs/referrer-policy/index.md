@@ -52,7 +52,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 // Sets "Referrer-Policy: same-origin".
 app.use(helmet.referrerPolicy({ policy: 'same-origin' }))
@@ -62,7 +62,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install referrer-policy" to get the referrer-policy package.
-var referrerPolicy = require('referrer-policy')
+const referrerPolicy = require('referrer-policy')
 
 // Sets "Referrer-Policy: no-referrer".
 app.use(referrerPolicy({ policy: 'no-referrer' }))

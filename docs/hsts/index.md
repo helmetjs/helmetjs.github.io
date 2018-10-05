@@ -44,10 +44,10 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 // Sets "Strict-Transport-Security: max-age=5184000; includeSubDomains".
-var sixtyDaysInSeconds = 5184000
+const sixtyDaysInSeconds = 5184000
 app.use(helmet.hsts({
   maxAge: sixtyDaysInSeconds
 }))
@@ -57,10 +57,10 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install hsts" to get the hsts package.
-var hsts = require('hsts')
+const hsts = require('hsts')
 
 // Sets "Strict-Transport-Security: max-age=5184000; includeSubDomains".
-var sixtyDaysInSeconds = 5184000
+const sixtyDaysInSeconds = 5184000
 app.use(hsts({
   maxAge: sixtyDaysInSeconds
 }))
@@ -85,13 +85,7 @@ This header will always be set because [the header is ignored in insecure HTTP](
 ```javascript
 app.use(helmet.hsts({
   // ...
-  setIf: function (req, res) {
-    if (req.secure) {
-      return true
-    } else {
-      return false
-    }
-  }
+  setIf: (req, res) => req.secure
 }))
 ```
 

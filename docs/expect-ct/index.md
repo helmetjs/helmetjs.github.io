@@ -8,7 +8,7 @@ The `Expect-CT` HTTP header tells browsers to expect Certificate Transparency. F
 Usage:
 
 ```javascript
-var expectCt = require('expect-ct')
+const expectCt = require('expect-ct')
 
 // Sets Expect-CT: max-age=123
 app.use(expectCt({ maxAge: 123 }))

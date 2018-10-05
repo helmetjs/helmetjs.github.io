@@ -8,10 +8,10 @@ Helmet is a collection of 14 middleware to help set some security headers.
 First, run `npm install helmet --save` for your app. Then, in an Express (or Connect) app:
 
 ```js
-var express = require('express')
-var helmet = require('helmet')
+const express = require('express')
+const helmet = require('helmet')
 
-var app = express()
+const app = express()
 
 app.use(helmet())
 

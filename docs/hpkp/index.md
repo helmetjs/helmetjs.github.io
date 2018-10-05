@@ -52,9 +52,9 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
-var ninetyDaysInSeconds = 7776000
+const ninetyDaysInSeconds = 7776000
 app.use(helmet.hpkp({
   maxAge: ninetyDaysInSeconds,
   sha256s: ['AbCdEf123=', 'ZyXwVu456=']
@@ -67,9 +67,9 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install hpkp" to get the hpkp package.
-var hpkp = require('hpkp')
+const hpkp = require('hpkp')
 
-var ninetyDaysInSeconds = 7776000
+const ninetyDaysInSeconds = 7776000
 app.use(hpkp({
   maxAge: ninetyDaysInSeconds,
   sha256s: ['AbCdEf123=', 'ZyXwVu456=']

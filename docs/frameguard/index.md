@@ -70,7 +70,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 app.use(helmet.frameguard({ action: 'sameorigin' }))
 ```
@@ -79,7 +79,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install frameguard" to get the Frameguard package.
-var frameguard = require('frameguard')
+const frameguard = require('frameguard')
 
 app.use(frameguard({ action: 'deny' }))
 ```

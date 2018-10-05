@@ -32,7 +32,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 // Sets "X-Download-Options: noopen".
 app.use(helmet.ieNoOpen())
@@ -42,7 +42,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install ienoopen" to get the ienoopen package.
-var ieNoOpen = require('ienoopen')
+const ieNoOpen = require('ienoopen')
 
 // Sets "X-Download-Options: noopen".
 app.use(ieNoOpen())

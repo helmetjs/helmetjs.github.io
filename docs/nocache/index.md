@@ -42,7 +42,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 app.use(helmet.noCache())
 ```
@@ -51,7 +51,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install nocache" to get the nocache package.
-var noCache = require('nocache')
+const noCache = require('nocache')
 
 app.use(noCache())
 ```

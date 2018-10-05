@@ -41,7 +41,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 // Sets "X-DNS-Prefetch-Control: off".
 app.use(helmet.dnsPrefetchControl())
@@ -51,7 +51,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install dns-prefetch-control" to get the dns-prefetch-control package.
-var dnsPrefetchControl = require('dns-prefetch-control')
+const dnsPrefetchControl = require('dns-prefetch-control')
 
 // Sets "X-DNS-Prefetch-Control: off".
 app.use(dnsPrefetchControl())

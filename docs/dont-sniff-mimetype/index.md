@@ -53,7 +53,7 @@ You can use this module as part of Helmet:
 
 ```javascript
 // Make sure you run "npm install helmet" to get the Helmet package.
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 // Sets "X-Content-Type-Options: nosniff".
 app.use(helmet.noSniff())
@@ -63,7 +63,7 @@ You can also use it as a standalone module:
 
 ```javascript
 // Make sure you run "npm install dont-sniff-mimetype" to get this package.
-var noSniff = require('dont-sniff-mimetype')
+const noSniff = require('dont-sniff-mimetype')
 
 // Sets "X-Content-Type-Options: nosniff".
 app.use(noSniff())

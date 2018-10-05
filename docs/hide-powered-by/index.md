@@ -31,7 +31,7 @@ The code
 This middleware is most useful when included in the default Helmet bundle, like this:
 
 ```javascript
-var helmet = require('helmet')
+const helmet = require('helmet')
 
 app.use(helmet())
 ```
@@ -51,7 +51,7 @@ app.use(helmet.hidePoweredBy())
 Or you can require the individual module:
 
 ```javascript
-var hidePoweredBy = require('hide-powered-by')
+const hidePoweredBy = require('hide-powered-by')
 
 app.use(hidePoweredBy())
 ```
