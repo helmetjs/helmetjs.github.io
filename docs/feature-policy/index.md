@@ -50,7 +50,7 @@ app.use(helmet.featurePolicy({
 You can also use it as a standalone module:
 
 ```javascript
-// Make sure you run "npm install helmet-crossdomain" to get this package.
+// Make sure you run "npm install feature-policy" to get this package.
 const featurePolicy = require('feature-policy')
 
 app.use(featurePolicy({
