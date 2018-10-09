@@ -30,6 +30,7 @@ Read more:
 - ["MIME sniffing in Internet Explorer enables cross-site scripting attacks"](http://www.h-online.com/security/features/Risky-MIME-sniffing-in-Internet-Explorer-746229.html)
 - ["Abusing JSONP with Rosetta Flash"](https://miki.it/blog/2014/7/8/abusing-jsonp-with-rosetta-flash/)
 - [MIME Sniffing live standard](https://mimesniff.spec.whatwg.org/)
+- [Cross Origin Resource Blocking in Chrome](https://developers.google.com/web/updates/2018/07/site-isolation)
 
 The header
 ----------
