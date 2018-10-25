@@ -9,6 +9,7 @@ Helmet only deals with HTTP headers, but there are a number of other helpful sec
 * [express-content-length-validator](https://github.com/ericmdantas/express-content-length-validator)
 * [express-enforces-ssl](https://github.com/aredo/express-enforces-ssl)
 * [hpp](https://www.npmjs.com/package/hpp)
+* [host-validation](https://www.npmjs.com/package/host-validation)
 
 This module also exists in other environments. Some are direct ports where others are similar modules.
 
