@@ -3,7 +3,7 @@ layout: page
 title: See also
 permalink: /see-also/
 ---
-Helmet only deals with HTTP headers, but there are a number of other helpful security modules for Express. We haven't heavily audited these—that's what the [Node Security Project](https://nodesecurity.io/) is for—but take a look at some of these modules!
+Helmet only deals with HTTP headers, but there are a number of other helpful security modules for Express. As a disclaimer, Helmet's maintainers have not heavily audited these modules!
 
 * [cors](https://www.npmjs.org/package/cors)
 * [express-content-length-validator](https://github.com/ericmdantas/express-content-length-validator)
