@@ -3,7 +3,7 @@ layout: page
 title: Docs
 permalink: /docs/
 ---
-Helmet is a collection of 14 middleware to help set some security headers.
+Helmet is a collection of 14 middleware functions to help set some HTTP response headers.
 
 First, run `npm install helmet --save` for your app. Then, in an Express (or Connect) app:
 
