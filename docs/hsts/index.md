@@ -94,7 +94,7 @@ app.use(helmet.hsts({
 Some browsers let you submit your site's HSTS to be baked into the browser. You can add `preload` to the header with the following code. You can check your eligibility and submit your site at [hstspreload.org](https://hstspreload.org/).
 
 ```javascript
-app.use(hsts({
+app.use(helmet.hsts({
   // Must be at least 1 year to be approved
   maxAge: 31536000,
 
