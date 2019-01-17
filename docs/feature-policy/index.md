@@ -23,7 +23,7 @@ Feature-Policy: notifications 'none'; payments example.com
 
 Read more:
 
-- ["A new security header: Feature-Policy](https://scotthelme.co.uk/a-new-security-header-feature-policy/)
+- ["A new security header: Feature-Policy"](https://scotthelme.co.uk/a-new-security-header-feature-policy/)
 - [Feature Policy](https://developers.google.com/web/updates/2018/06/feature-policy)
 
 The code
