@@ -33,6 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
+.callout,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
     line-height: $base-line-height;
@@ -182,6 +183,17 @@ pre {
 }
 
 
+/**
+ * Callouts
+ */
+
+.callout {
+    padding: 1em;
+    color: $warning-color-dark;
+    border: 1px solid $warning-color-dark;
+    background-color: $warning-color-light;
+    box-shadow: 0 0 2px $warning-color-dark;
+}
 
 /**
  * Wrapper

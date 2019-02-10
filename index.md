@@ -25,7 +25,7 @@ That's it! Helmet will set various HTTP headers to help protect your app.
 How it works
 ============
 
-Helmet is a collection of 14 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
+Helmet is a collection of 13 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
 
 You can see more in [the documentation](/docs).
 
@@ -38,7 +38,6 @@ You can see more in [the documentation](/docs).
 | [featurePolicy](/docs/feature-policy/) to limit your site's features |  |
 | [frameguard](/docs/frameguard/) to prevent clickjacking | ✓ |
 | [hidePoweredBy](/docs/hide-powered-by) to remove the X-Powered-By header | ✓ |
-| [hpkp](/docs/hpkp/) for HTTP Public Key Pinning |  |
 | [hsts](/docs/hsts/) for HTTP Strict Transport Security | ✓ |
 | [ieNoOpen](/docs/ienoopen) sets X-Download-Options for IE8+ | ✓ |
 | [noCache](/docs/nocache/) to disable client-side caching |  |

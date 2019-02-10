@@ -3,7 +3,7 @@ layout: page
 title: Docs
 permalink: /docs/
 ---
-Helmet is a collection of 14 middleware functions to help set some HTTP response headers.
+Helmet is a collection of 13 middleware functions to help set some HTTP response headers.
 
 First, run `npm install helmet --save` for your app. Then, in an Express (or Connect) app:
 
@@ -58,7 +58,6 @@ Visit each module's page to learn more.
 | [featurePolicy](feature-policy) to limit your site's features | |
 | [frameguard](frameguard) to prevent clickjacking | ✓ |
 | [hidePoweredBy](hide-powered-by) to remove the X-Powered-By header | ✓ |
-| [hpkp](hpkp) for HTTP Public Key Pinning |  |
 | [hsts](hsts) for HTTP Strict Transport Security | ✓ |
 | [ieNoOpen](ienoopen) sets X-Download-Options for IE8+ | ✓ |
 | [noCache](nocache) to disable client-side caching |  |

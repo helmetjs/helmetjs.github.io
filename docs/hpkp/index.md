@@ -3,9 +3,13 @@ layout: page
 title: HTTP Public Key Pinning
 permalink: /docs/hpkp/
 ---
+<div class="callout">
+  <strong>This middleware has been deprecated.</strong> It will be removed in Helmet 4. You can still read the documentation here but no new features will be added to the <code>hpkp</code> module.
+</div>
+
 In short: the HTTP Public Key Pinning module helps you set the `Public-Key-Pins` header to prevent person-in-the-middle attacks. **Usage of this header (and therefore this middleware) is not recommended.**
 
-**Be very careful when deploying this**—you can easily misuse this header and cause problems. Chrome dropped support for HPKP citing risks of misuse.
+**Be very careful when deploying this**—you can easily misuse this header and cause problems. [Chrome dropped support for HPKP citing risks of misuse.](https://www.chromestatus.com/feature/5903385005916160)
 
 The attack
 ----------
@@ -44,7 +48,11 @@ Read more:
 The code
 --------
 
-Helmet's HPKP module will set the `Public-Key-Pins` header.
+The HPKP module will set the `Public-Key-Pins` header.
+
+<div class="callout">
+  <strong>This middleware has been deprecated.</strong> It will be removed in Helmet 4.
+</div>
 
 **Warning: be very careful when using this**—you can easily make a mistake and cause problems. Chrome has dropped support for this.
 

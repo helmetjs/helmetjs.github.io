@@ -22,6 +22,10 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$warning-color:      #923;
+$warning-color-light: lighten($warning-color, 60%);
+$warning-color-dark: lighten($warning-color, 25%);
+
 $code-font-family: Inconsolata, Consolas, Monaco, monospace;
 $code-background-color: #f9f9ff;
 
