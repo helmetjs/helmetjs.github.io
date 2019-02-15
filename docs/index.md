@@ -52,7 +52,7 @@ Visit each module's page to learn more.
 | Module | Included by default? |
 |---|---|
 | [contentSecurityPolicy](csp) for setting Content Security Policy |  |
-| [crossdomain](crossdomain) for handling Adobe products' crossdomain requests |  |
+| [permittedCrossDomainPolicies](crossdomain) for handling Adobe products' crossdomain requests |  |
 | [dnsPrefetchControl](dns-prefetch-control) controls browser DNS prefetching | ✓ |
 | [expectCt](expect-ct) for handling Certificate Transparency |  |
 | [featurePolicy](feature-policy) to limit your site's features | |

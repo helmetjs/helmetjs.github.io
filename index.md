@@ -32,7 +32,7 @@ You can see more in [the documentation](/docs).
 | Module | Default? |
 |---|---|
 | [contentSecurityPolicy](/docs/csp/) for setting Content Security Policy |  |
-| [crossdomain](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
+| [permittedCrossDomainPolicies](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
 | [dnsPrefetchControl](/docs/dns-prefetch-control) controls browser DNS prefetching | ✓ |
 | [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
 | [featurePolicy](/docs/feature-policy/) to limit your site's features |  |
