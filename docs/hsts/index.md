@@ -80,13 +80,18 @@ app.use(helmet.hsts({
 
 ### Setting the header conditionally
 
-This header will always be set because [the header is ignored in insecure HTTP](https://tools.ietf.org/html/rfc6797#section-8.1). If you wish to set it conditionally, use `setIf`, a function that should return `true` if the header should be set and `false` otherwise.
+This header will always be set because [the header is ignored in insecure HTTP](https://tools.ietf.org/html/rfc6797#section-8.1). You may wish to set it conditionally:
 
 ```javascript
-app.use(helmet.hsts({
-  // ...
-  setIf: (req, res) => req.secure
-}))
+const hstsMiddleware = helmet.hsts({ /* ... */ })
+
+app.use((req, res, next) {
+  if (req.secure) {
+    hstsMiddleware(req, res, next)
+  } else {
+    next()
+  }
+})
 ```
 
 ### Preloading HSTS in Chrome
