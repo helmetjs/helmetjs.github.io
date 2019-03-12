@@ -59,6 +59,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [nocache#3](https://github.com/helmetjs/nocache/pull/3)
   - [Mo Binni](https://twitter.com/mobinni)
     - [helmet#119](https://github.com/helmetjs/helmet/pull/119)
+  - [Nathan Shively-Sanders](https://github.com/sandersn)
+    - [ienoopen#1](https://github.com/helmetjs/ienoopen/pull/1)
   - [Nathan Vander Wilt](http://exts.ch)
     - [helmet#29](https://github.com/helmetjs/helmet/pull/29)
   - [Nicholas Clawson](https://www.nickclaw.com/)
