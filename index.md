@@ -32,7 +32,6 @@ You can see more in [the documentation](/docs).
 | Module | Default? |
 |---|---|
 | [contentSecurityPolicy](/docs/csp/) for setting Content Security Policy |  |
-| [crossdomain](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
 | [dnsPrefetchControl](/docs/dns-prefetch-control) controls browser DNS prefetching | ✓ |
 | [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
 | [featurePolicy](/docs/feature-policy/) to limit your site's features |  |
@@ -42,5 +41,6 @@ You can see more in [the documentation](/docs).
 | [ieNoOpen](/docs/ienoopen) sets X-Download-Options for IE8+ | ✓ |
 | [noCache](/docs/nocache/) to disable client-side caching |  |
 | [noSniff](/docs/dont-sniff-mimetype) to keep clients from sniffing the MIME type | ✓ |
+| [permittedCrossDomainPolicies](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
 | [referrerPolicy](/docs/referrer-policy) to hide the Referer header |  |
 | [xssFilter](/docs/xss-filter) adds some small XSS protections | ✓ |
