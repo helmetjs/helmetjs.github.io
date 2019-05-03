@@ -9,7 +9,7 @@
 title: Helmet
 short_description: Express.js security with HTTP headers
 description: Helmet helps you secure your Express.js apps by setting various HTTP headers. It's not a silver bullet, but it can help!
-helmet_version: "3.16.0"
+helmet_version: "3.17.0"
 baseurl: ""
 url: "https://helmetjs.github.io" # the base hostname & protocol for your site
 
