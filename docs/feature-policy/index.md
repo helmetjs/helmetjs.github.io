@@ -60,3 +60,40 @@ app.use(featurePolicy({
   }
 }))
 ```
+
+The following features are currently supported:
+
+* `accelerometer`
+* `ambientLightSensor`
+* `autoplay`
+* `camera`
+* `documentDomain`
+* `documentWrite`
+* `encryptedMedia`
+* `fontDisplayLateSwap`
+* `fullscreen`
+* `geolocation`
+* `gyroscope`
+* `layoutAnimations`
+* `legacyImageFormats`
+* `loadingFrameDefaultEager`
+* `magnetometer`
+* `microphone`
+* `midi`
+* `oversizedImages`
+* `payment`
+* `pictureInPicture`
+* `serial`
+* `speaker`
+* `syncScript`
+* `syncXhr`
+* `unoptimizedImages`
+* `unoptimizedLosslessImages`
+* `unoptimizedLossyImages`
+* `unsizedMedia`
+* `usb`
+* `verticalScroll`
+* `vibrate`
+* `vr`
+* `wakeLock`
+* `xr`
