@@ -5,7 +5,7 @@ permalink: /contributors/
 ---
 Helmet has help from a lot of contributors. Thanks to everyone on this list!
 
-- Creator: [Adam Baldwin](https://andyet.net/team/baldwin/)
+- Creator: [Adam Baldwin](https://evilpacket.net)
 
 - Lead maintainer: [Evan Hahn](https://evanhahn.com)
 
