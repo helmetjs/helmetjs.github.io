@@ -29,6 +29,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [frameguard#4](https://github.com/helmetjs/frameguard/pull/4)
   - [Gar](https://danger.computer/)
     - [helmet#9](https://github.com/helmetjs/helmet/pull/9)
+  - [George Zografos](https://github.com/gzog)
+    - [hide-powered-by#3](https://github.com/helmetjs/hide-powered-by/pull/3)
   - [Gerges Beshay](https://gerges.beshay.org)
     - [helmetjs.github.io#25](https://github.com/helmetjs/helmetjs.github.io/pull/25)
     - [helmetjs.github.io#26](https://github.com/helmetjs/helmetjs.github.io/pull/26)
