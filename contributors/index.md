@@ -17,6 +17,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Benno van den Berg](https://github.com/hatchan)
     - [helmet#2](https://github.com/helmetjs/helmet/pull/2)
     - [hpkp#2](https://github.com/helmetjs/hpkp/pull/2)
+  - [Ben James](https://benjames.me/)
+    - [content-security-policy-builder#7](https://github.com/helmetjs/content-security-policy-builder/pull/7)
   - [Charlie Briggs](https://github.com/Limess)
     - [frameguard#9](https://github.com/helmetjs/frameguard/pull/9)
   - [Cole Murray](https://murraycole.com/)
