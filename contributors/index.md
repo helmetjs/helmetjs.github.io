@@ -22,6 +22,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [content-security-policy-parser#3](https://github.com/helmetjs/content-security-policy-parser/pull/3)
     - [crossdomain#8](https://github.com/helmetjs/crossdomain/pull/8)
     - [x-xss-protection#8](https://github.com/helmetjs/x-xss-protection/pull/8)
+    - [hsts#25](https://github.com/helmetjs/hsts/pull/25)
   - [Charlie Briggs](https://github.com/Limess)
     - [frameguard#9](https://github.com/helmetjs/frameguard/pull/9)
   - [Cole Murray](https://murraycole.com/)
