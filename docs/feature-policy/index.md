@@ -41,7 +41,7 @@ app.use(helmet.featurePolicy({
   features: {
     fullscreen: ["'self'"],
     vibrate: ["'none'"],
-    payment: ['example.com'],
+    payment: ["'example.com'"],
     syncXhr: ["'none'"]
   }
 }))
