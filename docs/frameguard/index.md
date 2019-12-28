@@ -47,13 +47,13 @@ The header has three options:
 
 1. `X-Frame-Options: DENY` will prevent _anyone_ from putting this page in an iframe.
 2. `X-Frame-Options: SAMEORIGIN` will prevent anyone from putting this page in an iframe _unless it's on the same origin_. That generally means that you can put your _own_ pages in iframes, but nobody else can.
-3. `X-Frame-Options: ALLOW-FROM http://example.com` will allow `http://example.com` to put your page in an iframe, but nobody else. (Unfortunately, you can only allow one domain.)
+3. `X-Frame-Options: ALLOW-FROM http://example.com` will allow `http://example.com` to put your page in an iframe, but nobody else. (Unfortunately, browser support is poor and you can only allow one domain.)
 
 In the example above, Facepamphlet could mitigate clickjacking attacks by setting the `X-Frame-Options` header to `DENY`, preventing its pages from being put in iframes. Many websites do this.
 
 If you aren't expecting your pages to be put in iframes, setting this to `DENY` or `SAMEORIGIN` is probably a good idea because it limits your page's attack surface.
 
-The header has pretty good browser support: IE8+, Opera 10.50+, Safari 4+, Chrome 4.1+, and Firefox 3.6.9+. The `ALLOW-FROM` header option is [not supported in many browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options#Browser_compatibility). Those browsers will ignore the entire header, [and the frame *will* be displayed](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet#Limitations_2).
+The header has pretty good browser support: IE8+, Opera 10.50+, Safari 4+, Chrome 4.1+, and Firefox 3.6.9+. The `ALLOW-FROM` header option is [not supported in many browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options#Browser_compatibility). Those browsers will ignore the entire header, [and the frame *will* be displayed](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet#Limitations_2), so you should probably avoid using this option.
 
 Read more:
 
@@ -98,6 +98,7 @@ app.use(frameguard())  // defaults to sameorigin
 
 // Allow from a specific host.
 // Sets "X-Frame-Options: ALLOW-FROM http://example.com".
+// Note that browser support for this option is low!
 app.use(frameguard({
   action: 'allow-from',
   domain: 'http://example.com'
