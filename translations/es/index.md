@@ -1,6 +1,7 @@
 ---
 layout: page
-permalink: /es_index
+title: X-Permitted-Cross-Domain-Policies
+permalink: /translations/es/index
 ---
 Helmet te ayuda incrementar la seguridad de tu aplicación basada en your Express seteando varias cabeceras (*headers*) HTTP. ¡*No es aprueba de balas*, pero puede ayudar!
 
