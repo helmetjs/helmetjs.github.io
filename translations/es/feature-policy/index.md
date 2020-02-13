@@ -1,40 +1,40 @@
 ---
 layout: page
 title: Feature-Policy
-permalink: /docs/feature-policy/
+permalink: /translations/es/feature-policy/
 ---
-In short: Helmet's `featurePolicy` middleware lets you restrict which browser features can be used. For example, you can disable fullscreen or vibration APIs.
+Brevemente: la función middleware `featurePolicy` de Helmet te permite restringir qué prestaciones o funciones del navegador pueden ser usadas. Por ejemplo, puedes desabilitar las APIs 'fullscreen' o 'vibration'.
 
-The "attack"
+El "ataque"
 ------------
 
-It's a good idea to limit your code's the surface area. Less stuff means less to attack.
+Siempre es una buena idea limitar el área de superficie de tu código. Menos cosas implica menos posibilidades de un ataque.
 
-Web browsers have lots of different features, from vibration to fullscreen to microphone access. While some of these can be useful, you may not wish to use all of them, and you may not want any third-party scripts you include to use them either.
+Los navegadores poseen muchas prestaciones y funcionalidades diferentes, desde vibraciones y accesos a la pantalla completa hasta el uso del micrófono incorporado y la cámara. Mientras algunas de estas funcionalidades pueden ser bastánte útiles, es improbable que desees tener todas habilitadas al mismo tiempo, y mucho menos que *scripts* de tercero puedan usarlas.
 
-The header
+La cabecera
 ----------
 
-The `Feature-Policy` header tells browsers which features you can use. For example, if you want to disable notifications for everyone and allow payments from `example.com`, you could send a header like this:
+La cabecera `Feature-Policy` le indica al navegador qué funcionalidades puede usar. Por ejemplo, si deseas desabilitar las notificaciones para todos los usuarios al tiempo que quieres aceptar pagos de `ejemplo.com`, puedes enviar una cabecera como la siguiente:
 
 ```
 Feature-Policy: notifications 'none'; payments example.com
 ```
 
-Read more:
+Leer más:
 
 - ["A new security header: Feature-Policy"](https://scotthelme.co.uk/a-new-security-header-feature-policy/)
 - [Feature Policy](https://developers.google.com/web/updates/2018/06/feature-policy)
 
-The code
+El código
 --------
 
-Helmet's `featurePolicy` middleware helps you set this header.
+La función middleware `featurePolicy` de Helmet ayuda a asignar estas cabeceras.
 
-You can use this module as part of Helmet:
+Puedes utilizar éste módulo como parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegúrate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
 app.use(helmet.featurePolicy({
@@ -47,10 +47,10 @@ app.use(helmet.featurePolicy({
 }))
 ```
 
-You can also use it as a standalone module:
+También puedes usar éste módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install feature-policy" to get this package.
+// Asegúrate de haber ejecutado "npm install feature-policy" para obtener éste paquete.
 const featurePolicy = require('feature-policy')
 
 app.use(featurePolicy({
@@ -61,7 +61,7 @@ app.use(featurePolicy({
 }))
 ```
 
-The following features are currently supported:
+Las siguientes funcionalidades están soportadas:
 
 * `accelerometer`
 * `ambientLightSensor`
