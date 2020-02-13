@@ -1,108 +1,109 @@
 ---
 layout: page
 title: Frameguard
-permalink: /docs/frameguard/
+permalink: /translations/es/frameguard/
 ---
-In short: Frameguard mitigates clickjacking attacks by setting the `X-Frame-Options` header.
+Brevemente: *Frameguard* mitiga la posibilidad de ataques basados en "*clickjacking*" (robo de clicks) mediante el seteo de la cabecera `X-Frame-Options`.
 
-The attack
+El ataque
 ----------
 
-[Clickjacking attacks](https://en.wikipedia.org/wiki/Clickjacking) are pretty clever.
+ [Los ataques basados en Clickjacking](https://en.wikipedia.org/wiki/Clickjacking) pueden ser bastánte astutos.
 
-The attacker wants you to click something that you don't actually want to click, and they do it by hiding the link/button _behind_ something else that they can trick you into clicking on.
+El atacante intentará que hagas *click* donde no tienes planeado hacerlo. Para lograrlo, esconderán el botón o enlace detrás de un señuelo montado para hacerte creer que estás haciendo *click* donde realmente deseas hacerlo.
 
-Let's imagine that I've got a social network called Facepamphlet. I'm trying to get you to click "I love this" on my page, "Being Mean For No Reason".
+Imaginemos que poseo una red social llamada "*Facepamphlet*" y estoy intentando que hagas *clicl* en *"I love this"* en el apartado, "*Being mean for no reason*".
 
 ![Screenshot of target page](frameguard-target-page.png)
 
-You would never click the "I love this" button on your own, because you're a kind person—you're not a fan of being mean for no reason!
+¡Probablemente Nunca harías click en el botón "*I love this*" porque eres una persona amable y no eres una persona que desea ser malo sin motivo!
+*[N.de.T: "Being mean for reason" significa "Ser malo sin ningún motivo"]*.
 
-But let's say I send you a website promising hundreds of photos of adorable puppies. You'd click something that let you see all of that! Cute puppies are great!
+Pero digamos que te envío a un sitio en el cual prometen cientos de fotos de cachorritos adorables. ¡Vamos, claro que harías *click* para ver eso! ¡Los cachorritos son hermosos!
 
-I send you a page that looks like this:
+Entonces te mando una página que luce como la siguiente:
 
 ![Screenshot of evil page with trick hidden](frameguard-malicious-hidden.png)
 
-Of course you want to see cute puppies, so you click "Click here". But, unbeknownst to you, there is an _invisible iframe_ that you've just clicked on!
+Como estás dispuesto a ver esos hermosos cachorritos decides hacer *click* donde dice "*Click here*". Pero, sin saberlo, hay un *iframe* invisible justo en el mismo lugar donde acabas de hacer *click*.
 
 ![Screenshot of evil page with trick exposed](frameguard-malicious-shown.png)
 
-I've just "clickjacked" you and gotten you to click "I love this" on a page you hate!
+Acabo de robarte el click ("*clickjacked*"), y logré que hicieras *click*  en "*I love this*" en aquella página que intentaste evitar.
 
-Clickjacking can be used to get you to click anything you don't want to. These things include unintentional endorsements on social networks, clicking advertisements, and if it's very clever, tricking you into doing more complex things.
+El robo de *clicks* ("*Clickjacking*") puede ser usado para hacerte *clickear* en lugares que no quieres hacerlo. Estos ataques pueden inducirte a hacer *click* en botones dentro de redes sociales, propagandas, e incluso lograr engañarte para hacer cosas más complejas.
 
-Read more:
+Leer más:
 
 - [Clickjacking article on Wikipedia](https://en.wikipedia.org/wiki/Clickjacking)
 - [Clickjacking Defense Cheat Sheet](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet)
 - [iframe element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
 
-The header
+La cabecera
 ----------
 
-The `X-Frame-Options` header tells browsers to prevent your webpage from being put in an iframe. When browsers load iframes, they'll check the value of the `X-Frame-Options` header and abort loading if it's not allowed.
+La cabecera `X-Frame-Options` le indica a los navegadores que impida poner tu página dentro de un *iframe* ubicado en el contenido de otro sitio. Cuando los navegadores cargan *iframes* primero se fijarán en el valor de la cabecera `X-Frame-Options` y abortarán la carga si ésta no está permitida.
 
-The header has three options:
+La cabecera posee tres opciones:
 
-1. `X-Frame-Options: DENY` will prevent _anyone_ from putting this page in an iframe.
-2. `X-Frame-Options: SAMEORIGIN` will prevent anyone from putting this page in an iframe _unless it's on the same origin_. That generally means that you can put your _own_ pages in iframes, but nobody else can.
-3. `X-Frame-Options: ALLOW-FROM http://example.com` will allow `http://example.com` to put your page in an iframe, but nobody else. (Unfortunately, browser support is poor and you can only allow one domain.)
+1. `X-Frame-Options: DENY` impedirá que nadie ponga tu página en un *iframe*.
+2. `X-Frame-Options: SAMEORIGIN` impedirá que nadie ponga tu página en un *iframe* a **excepto que sea del mismo origen**. Esto generalmente significa que tú puedes poner tus propias páginas en *iframes* pero nadie más puede hacerlo.
+3. `X-Frame-Options: ALLOW-FROM http://example.com` permitirá que `http://example.com` ponga tu página dentro de un *iframe*, pero nadie más. (Desafortunadamente los navegadores no soportan bien ésta funcionalidad y sólo puedes añadir un sólo dominio).
 
-In the example above, Facepamphlet could mitigate clickjacking attacks by setting the `X-Frame-Options` header to `DENY`, preventing its pages from being put in iframes. Many websites do this.
+En el ejemplo anterior, *"Facepamphlet*" podría mitigar el robo de clicks ("*clickjacking*") asignando la cabecera `X-Frame-Options` a `DENY`, previniendo así que sus propias páginas sean puestas dentro de *iframes*. Muchos sitios de internet hacen ésto mismo.
 
-If you aren't expecting your pages to be put in iframes, setting this to `DENY` or `SAMEORIGIN` is probably a good idea because it limits your page's attack surface.
+Si en realidad no estás esperando que tu página sea puesta en un *iframe*, siempre es buena idea asignar ésta cabecera en `DENY` o `SAMEORIGIN` dado que ésto limita posibles ataques.
 
-The header has pretty good browser support: IE8+, Opera 10.50+, Safari 4+, Chrome 4.1+, and Firefox 3.6.9+. The `ALLOW-FROM` header option is [not supported in many browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options#Browser_compatibility). Those browsers will ignore the entire header, [and the frame *will* be displayed](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet#Limitations_2), so you should probably avoid using this option.
+Ésta cabecera tiene un muy buen soporte: IE8+, Opera 10.50+, Safari 4+, Chrome 4.1+, y Firefox 3.6.9+. Pero la opción `ALLOW-FROM` [no está soportada de la misma forma](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options#Browser_compatibility). Aquellos navegadores que no soporten dicha opción ignorarán la cabecera por completo [y el *iframe* **sí** será renderizado](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet#Limitations_2), por lo que quizás deberías evitar usar ésta opción.
 
-Read more:
+Leer Más:
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options)
 - [Can I Use X-Frame-Options](http://caniuse.com/#feat=x-frame-options)
 - ["Google YOLO"](https://blog.innerht.ml/google-yolo/)
 
-The code
+El código
 --------
 
-Helmet's Frameguard is a relatively simple middleware that will set the `X-Frame-Options` header to whatever you specify.
+La función Frameguard de Helmet es un middleware relativamente sencillo que setea la cabecera `X-Frame-Options` a lo que tú especifiques.
 
-You can use this module as part of Helmet:
+Puedes utilizar éste módulo como parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegúrate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
 app.use(helmet.frameguard({ action: 'sameorigin' }))
 ```
 
-You can also use it as a standalone module:
+También puedes usar éste módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install frameguard" to get the Frameguard package.
+// Asegúrate de haber ejecutado  "npm install frameguard" para obtener el paquete de Frameguard.
 const frameguard = require('frameguard')
 
 app.use(frameguard({ action: 'deny' }))
 ```
 
-Once you've required it, you can use it in your apps:
+Una vez requerido puedes utilizarlo en tus aplicaciones:
 
 ```javascript
-// Don't allow me to be in ANY frames.
+// Impide ser puesto en cualquier iframe.
 // Sets "X-Frame-Options: DENY".
 app.use(frameguard({ action: 'deny' }))
 
-// Only let me be framed by people of the same origin.
+// Solo permite ser puesto en iframes del mismo origen.
 // Sets "X-Frame-Options: SAMEORIGIN".
 app.use(frameguard({ action: 'sameorigin' }))
 app.use(frameguard())  // defaults to sameorigin
 
-// Allow from a specific host.
+// Solo permite que un host incluya mis páginas en un iframe.
 // Sets "X-Frame-Options: ALLOW-FROM http://example.com".
-// Note that browser support for this option is low!
+// RECUERDA QUE NO TODOS LOS BROWSER SOPORTAN ESTO!
 app.use(frameguard({
   action: 'allow-from',
   domain: 'http://example.com'
 }))
 ```
 
-This header is included in the default Helmet bundle and it uses its default value, `SAMEORIGIN`.
+Ésta cabecera está incluida por defecto en el paquete de Helmet y está asignada con el valor de `SAMEORIGIN`.
