@@ -1,59 +1,59 @@
 ---
 layout: page
 title: No Cache
-permalink: /docs/nocache/
+permalink: /translations/es/nocache/
 ---
-In short: the `nocache` middleware aims to disable browser caching by setting several headers.
+Brevemente: la función middleware `nocache`apunta a deshabilitar el cacheo del navegador mediante el seteo de varias cabeceras.
 
-The "attack"
+El ataque
 ------------
 
-This module doesn't exactly protect a specific attack. It prevents users from getting cached versions of your files (like old JavaScript).
+Éste módulo no protege de un ataque específico. En cambio, previene a los usuarios de obtener versiones cacheadas de tus archivos (como viejos archivos de javascript).
 
-For example, imagine you have a front-end web app that serves JavaScript. One day, you discover that one of your JavaScript libraries has a vulnerability, so you upgrade it and update your site. Unfortunately, there are some cases where users can get *old*, cached versions of your code, which might still have the vulnerability.
+Por ejemplo, imagina que tienes una aplicación de front-end que sirve Javascript. Un día descubres que una de tus librerías posée una vulnerabilidad, así que la actualizas en conjunto con tu sitio. Desafortunadamente, hay muchas posibilidades de que un usuario obtenga una versión *vieja*, cacheada, de tu código, lo que implicaría una posible vulnerabilidad.
 
-Caching has lots of benefits, but it can cause users to get stale versions.
+Cachear tiene muchas ventajas y beneficios, pero también puede ser el causante de que algunos usuarios sean provistos de versiones desactualizadas de tu sitio.
 
-The headers
+Las cabeceras
 -----------
 
-This module deals with four caching headers.
+Éste módulo trabaja con cuatro cabeceras encargadas de hacer el cacheo.
 
-1. `Cache-Control` is a header that has many directives. For example, `Cache-Control: max-age=864000` will tell browsers to cache the response for 10 days. In those 10 days, browsers will pull from their caches. Setting this header to `Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate` will obliterate caching, as far as this header is concerned.
-2. `Surrogate-Control` is another header that CDNs respect. You can use it to tell intermediate caches to eschew caching.
-3. `Pragma` is a legacy HTTP header. Setting `Pragma: no-cache` will tell supported browsers to stop caching the response. It has fewer features than `Cache-Control` but it can better support old browsers.
-4. `Expires` specifies when the content should be considered out of date, or expired. Setting this to `0` will tell browsers the content expires immediately. In other words, they shouldn't cache it.
+1. `Cache-Control` es una cabecera que incluye varias directivas. Por ejemplo, `Cache-Control: max-age=864000` instuirá a los navegadores a guardar una respuesta por 10 días. En esos 10 días los navegadores usarán aquellas versiones guardadas. Seteando esta cabecera a `Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate` anulará el cacheo tanto dentro de las posibilidades que conciernen a ésta cabecera.
+2. `Surrogate-Control` es otra cabecera que opera con las CDN. Puedes usarla para comunicar a los sistemas de intermediación que no hagan ningún tipo de cacheo.
+3. `Pragma` es una cabecera actualmente considerada como *legacy*. Seteando `Pragma: no-cache` le dirá a los navegadores que aun utilizan ésta cabecera, que discontinúen el cacheo de las respuestas enviadas por el servidor. Posee menos funciones que `Cache-Control` pero tiene mejor soporte en los navegadores antiguos.
+4. `Expires` especigica cuándo el contenido debe ser considerado desactualizado. Seteandolo a `0` informará a los navegadores que el contenido debe caducar de inmediato. En otras palabras, que no deben cachearlo.
 
-Absent from this list is the [ETag header](https://en.wikipedia.org/wiki/HTTP_ETag), which is a pretty safe caching mechanism.
+La lista anterior no incluye la cabecera [ETag](https://en.wikipedia.org/wiki/HTTP_ETag), la cual es un mecanismo de cacheo bastante seguro.
 
-Read more:
+Para más información:
 
 * [Cache-Control RFC](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 * [Pragma RFC](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32)
 * ["Cache control tutorial" on Fastly's documentation](https://docs.fastly.com/guides/tutorials/cache-control-tutorial)
 * ["HTTP Caching" on Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
-The code
+El código
 --------
 
-Helmet's `noCache` is a relatively simple middleware that will set the four HTTP headers noted above: `Cache-Control`, `Surrogate-Control`, `Pragma`, and `Expires`.
+La función middleware `noCache` de Helmet es relativamente simple y se encarga de setear las cuatro cabeceras mencionadas anteriormente: `Cache-Control`, `Surrogate-Control`, `Pragma`, y `Expires`.
 
-You can use this module as part of Helmet:
+Puedes usar éste módulo como parte de Helmpet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegurate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
 app.use(helmet.noCache())
 ```
 
-You can also use it as a standalone module:
+También puedes usar éste módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install nocache" to get the nocache package.
+// Asegurate de haber ejecutado "npm install nocache" para obtener éste paquete.
 const noCache = require('nocache')
 
 app.use(noCache())
 ```
 
-This header is *not* included in the default Helmet bundle.
+Ésta cabecera **no está incluida** por defecto dentro del paquete de Helmet.
