@@ -1,29 +1,28 @@
 ---
 layout: page
 title: Don't Sniff Mimetype
-permalink: /docs/dont-sniff-mimetype/
+permalink: /translations/es/dont-sniff-mimetype/
 ---
 
-In short: the Don't Sniff Mimetype middleware, `noSniff`, helps prevent browsers from trying to guess ("sniff") the MIME type, which can have security implications. It does this by setting the `X-Content-Type-Options` header to `nosniff`.
+Brevemente: la funcción middleware "*Don't Sniff Mimetype middleware*", `noSniff`, ayuda a prevenir que los navegadores intenten inferir los *MIME type*, lo que puede tener implicancias en la seguridad. esto se realiza seteando la cabecera `X-Content-Type-Options` en `nosniff`.
 
-The attack
+El ataque
 ----------
 
-MIME types are a way of determining what kind of file you're looking at. PNG images have the type `image/png`; JSON files are `application/json`; JavaScript files are typically `text/javascript`. When your browser loads a file, it reads the server's `Content-Type` header to determine what the thing is.
+Los *MIME types* son una forma de determinar qué tipo de archivo se está requiriendo. Las imágenes PNG tienen un tipo `image/png`; los archivos JSON son `application/json`; los archivos JavaScript típicamente son `text/javascript`. Para saber de qué se trata, cuando tu navegador carga un archivo suele leer la cabecera `Content-Type` enviada por el servidor.
 
-Let's say that your browser sees this:
+Digamos que tu navegador ve esto:
 
 ```html
 <script src="https://example.com/my-javascript"></script>
 ```
+En éste caso, el navegador cargará `my-javascript` from `example.com`. Si `example.com` envía una cabecera `Content-Type` con el contenido `text/javascript`, el navegador ejecutará los contenidos de `my-javascript` como Javascript.
 
-It'll go and load `my-javascript` from `example.com`. If `example.com` sends a `Content-Type` header of `text/javascript`, your browser will execute the contents of `my-javascript` as JavaScript.
+Pero que pasaría si `my-javascript` es una página HTML con un `Content-Type` seteado en `text/html`? Si tu navegador hace algo llamado "*MIME sniffing*" (algunos lo hacen), entonces se fijará en los contenidos de dicho archivo, decidirá si se parece a Javascript, y posteriormente lo ejecutará si así lo interpreta. Esto significa que un servidor puede enviar un `Content-Type` equivocado y que el contenido Javascript se ejecute de todas formas.
 
-But what if `my-javascript` is an HTML page with a `Content-Type` of `text/html`? If your browser does something called "MIME sniffing" (which some do), it will look at the contents of the file, decide if it looks like JavaScript, and execute it if so. This means that a server can send the wrong `Content-Type` and JavaScript can still get executed.
+Este *Mime sniffing* puede ser un vector de ataques. un usuario podría subir una archivo con una extensión `.jpg`, pero con HTML en su contenido. Cargar esa página podría causar que el navegador "ejecute" la página HTML dentro del archivo... ¡El cuál podría contener Javascript malicioso! Quizás el ataque más sucio es conocido como [Rosetta Flash](https://miki.it/blog/2014/7/8/abusing-jsonp-with-rosetta-flash/), el cual permite que alguin logre cargar un *pluguin* malicioso de Flash.
 
-This MIME sniffing can be an attack vector. A user could upload an image with the `.jpg` file extension but its contents are actually HTML. Visiting that image could cause the browser to "run" the HTML page, which could contain malicious JavaScript! Perhaps the nastiest attack is called [Rosetta Flash](https://miki.it/blog/2014/7/8/abusing-jsonp-with-rosetta-flash/), which allows someone to load a malicious Flash plugin instead of data!
-
-Read more:
+Leer Más:
 
 - ["MIME type" on Wikipedia](https://en.wikipedia.org/wiki/Media_type)
 - ["MIME Sniffing: feature or vulnerability?"](https://blog.fox-it.com/2012/05/08/mime-sniffing-feature-or-vulnerability/)
@@ -32,41 +31,41 @@ Read more:
 - [MIME Sniffing live standard](https://mimesniff.spec.whatwg.org/)
 - [Cross Origin Resource Blocking in Chrome](https://developers.google.com/web/updates/2018/07/site-isolation)
 
-The header
+La Cabecera
 ----------
 
-The `X-Content-Type-Options` header tells browsers not to sniff MIME types. When this header is set to `nosniff`, browsers won't sniff the MIME type—they will trust what the server says and block the resource if it's wrong.
+La cabecera `X-Content-Type-Options` instruye al navegador para no husmear los *MIME types*. Cuando ésta cabecera está seteada en `nosniff`, El navegador dejará de hacerlo y confiará en lo que el servidor le informe, bloqueando el recurso en caso de no poseer el *MIME type* informado.
 
-Read more:
+Leer más:
 
 - ["X-Content-Type-Options" on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
 - ["What is 'X-Content-Type-Options=nosniff'?" on Stack Overflow](https://stackoverflow.com/questions/18337630/)
 - ["Reducing MIME type security risks" on MSDN](https://msdn.microsoft.com/en-us/library/gg622941(v=vs.85).aspx)
 - ["IE8 Security Part V: Comprehensive Protection" on MSDN](https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/)
 
-The code
+El código
 --------
 
-The `noSniff` middleware will set the `X-Content-Type-Options` header to `nosniff` for every request.
+La función middleware `noSniff` asignará la cabecera `X-Content-Type-Options` a `nosniff` para todas las peticiones.
 
-You can use this module as part of Helmet:
+Puedes usar éste módulo como una parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegurate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
-// Sets "X-Content-Type-Options: nosniff".
+// Asigna "X-Content-Type-Options: nosniff".
 app.use(helmet.noSniff())
 ```
 
-You can also use it as a standalone module:
+También puedes usar éste módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install dont-sniff-mimetype" to get this package.
+// Asegurate de haber ejecutado "npm install dont-sniff-mimetype" para obtener éste paquete.
 const noSniff = require('dont-sniff-mimetype')
 
-// Sets "X-Content-Type-Options: nosniff".
+// Asigna"X-Content-Type-Options: nosniff".
 app.use(noSniff())
 ```
 
-This header is included in the default Helmet bundle.
+Esta cabecera está incluida por defecto en el paquete Helmet.
