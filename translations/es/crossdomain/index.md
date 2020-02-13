@@ -1,59 +1,57 @@
 ---
 layout: page
 title: X-Permitted-Cross-Domain-Policies
-permalink: /docs/crossdomain/
+permalink: /translations/es/crossdomain/
 ---
-In short: Helmet's `crossdomain` middleware prevents Adobe Flash and Adobe Acrobat from loading content on your site.
+Brevemente: La función *middleware* `crossdomain` de Helmet previene que Adobe Flash y Adobe Acrobat carguen contenido en tu sitio.
 
-The "attack"
+El "ataque"
 ------------
+Limitar el área superficial de tu código es una buena idea. Menos cosas implican menos ataques.
 
-It's a good idea to limit your code's the surface area. Less stuff means less to attack.
+Adobe Flash y Adobe Acrobat pueden cargar contenido en tu dominio incluso desde otros sitios (en otras palabtas, "*cross-domain*"). Esto podría causar inesperadas filtraciones de datos o un uso excesivo del ancho de banda.
 
-Adobe Flash and Adobe Acrobat can load content from your domain even from other sites (in other words, cross-domain). This could cause unexpected data disclosure in rare cases or extra bandwidth usage.
-
-The header
+La cabecera
 ----------
 
-The `X-Permitted-Cross-Domain-Policies` header tells clients like Flash and Acrobat what cross-domain policies they can use. If you don't want them to load data from your domain, set the header's value to `none`. For example:
+La cabecera `X-Permitted-Cross-Domain-Policies` dice a los clientes Flash and Acrobat qué políticas de dominio cruzado ("*cross-domain*) pueden usar. Si no quieres que carguen contenido desde tu dominio, setea el valor de ésta cabecera a `none`. Por Ejemplo:
 
 ```
 X-Permitted-Cross-Domain-Policies: none
 ```
+Si flash carga algo desde tu sitio y ve eso, entonces sabrá que no debe cargar contenido desde tu dominio.
 
-If Flash loads something from your site and sees that, it'll know that it shouldn't load data from your domain.
-
-The header has other values that require you to create a `crossdomain.xml` file defining what your cross-domain policy is. You can read more about this in the links below.
+La cabecera posee otros valores que requieren la creación de un archivo `crossdomain.xml` que defina cuáles son tus políticas de dominio cruzado (*"cross-domain"*). Puedes leer más al respecto en los enlaces de abajo.
 
 Read more:
 
-- ["X-Permitted-Cross-Domain-Policies" section on OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xpcdp)
-- [Adobe's spec for cross-domain policies](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/xdomain.html)
+- ["X-Permitted-Cross-Domain-Policies" sección en OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xpcdp)
+- [Especificaciones de Adobe para las políticas de dominio cruzado](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/xdomain.html)
 
-The code
+El código
 --------
 
-Helmet's `crossdomain` middleware helps you set this header.
+La función middleware `crossdomain` de Helmet puede ayudarte a setear ésta cabecera.
 
-You can use this module as part of Helmet:
+Puedes usar éste módulo como una parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegúrate de ejecutar "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
 app.use(helmet.permittedCrossDomainPolicies())
 ```
 
-You can also use it as a standalone module:
+Tambien puedes utilizarlo como un módulo independiente:
 
 ```javascript
-// Make sure you run "npm install helmet-crossdomain" to get this package.
+// Asegúrate de ejecutar "npm install helmet-crossdomain" para obtener éste paquete.
 const permittedCrossDomainPolicies = require('helmet-crossdomain')
 
 app.use(permittedCrossDomainPolicies())
 ```
 
-This header's value is `none` by default. You can set the header's value to other things, too:
+Por defecto el valor de ésta cabecera es `none`. También puedes asignar otros valores a ésta cabecera:
 
 ```javascript
 app.use(permittedCrossDomainPolicies({ permittedPolicies: 'master-only' }))
