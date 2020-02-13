@@ -1,34 +1,34 @@
 ---
 layout: page
 title: Hide Powered-By
-permalink: /docs/hide-powered-by/
+permalink: /translations/es/hide-powered-by/
 ---
-In short: The Hide Powered-By middleware removes the `X-Powered-By` header to make it slightly harder for attackers to see what potentially-vulnerable technology powers your site.
+Brevemente: la función middleware *Hide Powered-By* remueve la cabecera `X-Powered-By` para esconder qué tecnología está siendo utilizada para proveer tu sitio y así dificultar un poco la detección de posibles vulnerabilidades por parte de un atacante.
 
-The "attack"
+El ataque
 ------------
 
-Hackers can exploit known vulnerabilities in Express and Node if they know you're using it. Express (and other web technologies like PHP) set an `X-Powered-By` header with every request, indicating what technology powers the server. Express, for example, sets this, which is a dead giveaway that your server is powered by Express.
+Los hackers pueden explotar posibles vulnerabilidades en Express y Node si saben que los estás utilizando. Express (y otras teconologías orientadas al desarrollo web como PHP) utilizan una cabecera `X-Powered-By` para cada petición, indicando así la tecnología usada por el servidor. Al hacer esto, Express provee información importante a los posibles atacantes.
 
-A hacker can use this information to their advantage. If they know of a vulnerability in Express or Node and they see your site is Express-powered, they can be more targeted.
+Así, un hacker podría usar esta información y correr con ventaja. Si ellos conocen realmente alguna vulnerabilidad en Express o Node, podrían simplemente chequear si lo estás usando y enfocarse en la construcción de un ataque enfocado hacia esas debilidades.
 
-The fix
+La solución
 -------
 
-The fix is to simply remove the header.
+La solución simplemente consiste en remover esa cabecera.
 
-To be fair, if a determined hacker doesn't see this header, they won't suddenly give up. They could look for other clues to find out that you're using Node, or they could simply try a bunch of attacks and see if any of them work. Simply omitting this header doesn't mean that nobody can exploit vulnerabilities; it may slow them down slightly or deter a lazy hacker.
+Para ser sinceros, si un hacker está empeñado en hacerte daño, el hecho de no encontrar esa cabecera no hará que se de por vencido. Ellos simplemente buscarán otras pistas que le permitan averiguar si estás usando Node, o simplemente podrían tratar otros ataques y ver si alguno de ellos da resultados. Omitir esta cabecera no significa que ya nadie puede explotar posibles vulnerabilidades en tu servidor, pero quizás pueda retrazar el proceso... o detenerlo si el hacker es realmente perezoso.
 
-There is also a slight performance benefit when removing this header because fewer bytes need to be sent.
+Otra de las cosas que puede mensionarse al respecto es una pequeña mejora en la *performance* de tu servidor, dado que omitir la emisión de esa cabecera implica que menos bytes serán enviados hacia el usuario.
 
-Read more:
+Leer más:
 
 - ["Removing the header provides no security benefits"](https://github.com/expressjs/express/pull/2813#issuecomment-159270428)
 
-The code
+El código
 --------
 
-This middleware is most useful when included in the default Helmet bundle, like this:
+Sobre todo, esta función middleware es más útli cuando se incluye con el paquete Helmet como en el siguiente ejemplo:
 
 ```javascript
 const helmet = require('helmet')
@@ -36,27 +36,26 @@ const helmet = require('helmet')
 app.use(helmet())
 ```
 
-If you are using each of Helmet's headers piece-by-piece, there's a better way to get this header's behavior with a feature built into Express:
+Si estás usando cada uno de las cabeceras seteadas por Helmet, una por una, hay una mejor manera de omitir ésta cabecera utilizando la función nativa de Express:
 
 ```javascript
 app.disable('x-powered-by')
 ```
 
-If you still want to use this module, it's allowed. You can use it as part of Helmet:
+Si de todas formas prefieres utilizar la función provista por Helmet, también está permitido. Para utilizar el módulo en solitario simplemente debes seguir el siguiente ejemplo:
 
 ```javascript
 app.use(helmet.hidePoweredBy())
 ```
 
-Or you can require the individual module:
+O incluso puedes requerir el módulo, asignarlo a una variable y luego usarlo como una función middleware en Express:
 
 ```javascript
 const hidePoweredBy = require('hide-powered-by')
 
 app.use(hidePoweredBy())
 ```
-
-You can also *lie* in this header to throw a hacker off the scent. For example, to make it look like your site is powered by PHP:
+También puedes *mentir* usando esta cabecera y desorientar a los hackers. Por ejemplo, para simular que estás usando PHP podrías utilizar la siguiente función:
 
 ```javascript
 app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))
