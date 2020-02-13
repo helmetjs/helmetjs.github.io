@@ -1,51 +1,51 @@
 ---
 layout: page
 title: IE No Open
-permalink: /docs/ienoopen/
+permalink: /translations/es/ienoopen/
 ---
-In short: this middleware sets the `X-Download-Options` to prevent Internet Explorer from executing downloads in your site's context.
+Brevemente: la función middleware `X-Download-Options` de Helmet previene que Internet Explorer ejecute descargas en el contexto de tu sitio to prevent Internet Explorer from executing downloads in your site's context.
 
-The attack
+El ataque
 ----------
 
-This attack only affects old versions of Internet Explorer.
+Éste ataque sóloa fecta versiones antiguas de Internet Explorer.
 
-Some web applications will serve untrusted HTML for download. For example, you could allow users to upload and download HTML files.
+Algunas aplicaciones web intentaran servir HTML no confiable para su descarga. Por ejemplo, podrías permitirle a los usuarios subir y bajar archivos HTML.
 
-By default, old versions of Internet Explorer will allow you to open those HTML files in the context of your site, which means that an untrusted HTML page could start doing bad things in the context of your pages. For more, see [this MSDN blog post](https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/).
+Por defecto, las versiones antiguas de Internet Explorer permiten abrir esos archivos HTML en el contexto de tu sitio, lo que implica que una página desconocida pueda realizar acciones maliciosas en el contexto de tus páginas. Para saber más, ver [este articulo de MSDN](https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/).
 
-The header
+La cabecera
 ----------
 
-The `X-Download-Options` header can be set to `noopen`. This will prevent old versions of Internet Explorer from allowing malicious HTML downloads to be executed in the context of your site.
+La cabecera `X-Download-Options` puede ser asignada a `noopen`. Esto previene que las versiones antiguas de Internet Explorer descargue y ejecute archivos HTML en el contexto de tu sitio.
 
-Read more:
+Leer más:
 
 - ["IE8 Security Part V: Comprehensive Protection" on MSDN](https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/)
 
-The code
+El código
 --------
 
-Helmet's `ieNoOpen` is a relatively simple middleware that will set the `X-Download-Options` header to `noopen`.
+El middleware `ieNoOpen` de Helmet es una función relativamente sencilla que asignará la cabecera `X-Download-Options` a `noopen`.
 
-You can use this module as part of Helmet:
+Puedes utilizar éste módulo como parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegúrate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
-// Sets "X-Download-Options: noopen".
+// Asigna "X-Download-Options: noopen".
 app.use(helmet.ieNoOpen())
 ```
 
-You can also use it as a standalone module:
+Tambien puedes usar éste módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install ienoopen" to get the ienoopen package.
+// Asegúrate de haber ejecutado "npm install ienoopen" para obtener el paquete.
 const ieNoOpen = require('ienoopen')
 
-// Sets "X-Download-Options: noopen".
+// Asigna "X-Download-Options: noopen".
 app.use(ieNoOpen())
 ```
 
-This header is included in the default Helmet bundle.
+Esta cabecera está incluida por defecto en el paquete de Helmet.
