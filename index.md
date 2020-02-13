@@ -44,3 +44,8 @@ You can see more in [the documentation](/docs).
 | [permittedCrossDomainPolicies](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
 | [referrerPolicy](/docs/referrer-policy) to hide the Referer header |  |
 | [xssFilter](/docs/xss-filter) adds some small XSS protections | ✓ |
+
+
+To see the documentation in other languages
+============
+[Spanish / Español](/translations/es/)
