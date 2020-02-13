@@ -1,7 +1,7 @@
 ---
 layout: page
 title: X-Permitted-Cross-Domain-Policies
-permalink: /translations/es/index
+permalink: /translations/es
 ---
 Helmet te ayuda incrementar la seguridad de tu aplicación basada en your Express seteando varias cabeceras (*headers*) HTTP. ¡*No es aprueba de balas*, pero puede ayudar!
 
@@ -28,7 +28,7 @@ Cómo funciona
 
 Helmet es una colección de 13 funciones middleare más pequeñeas que setean cabeceras en las respuestas HTTP. Por defecto, ejecutar `app.use(helmet())` no las incluirá a todas.
 
-Puedes ver más acerca de ésto en [la documentación](/docs/es).
+Puedes ver más acerca de ésto en [la documentación](/translations/es/).
 
 | Módulo | ¿Por defecto? |
 |---|---|
