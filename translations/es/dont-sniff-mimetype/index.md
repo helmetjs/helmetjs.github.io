@@ -22,7 +22,7 @@ Pero que pasaría si `my-javascript` es una página HTML con un `Content-Type` s
 
 Este *Mime sniffing* puede ser un vector de ataques. un usuario podría subir una archivo con una extensión `.jpg`, pero con HTML en su contenido. Cargar esa página podría causar que el navegador "ejecute" la página HTML dentro del archivo... ¡El cuál podría contener Javascript malicioso! Quizás el ataque más sucio es conocido como [Rosetta Flash](https://miki.it/blog/2014/7/8/abusing-jsonp-with-rosetta-flash/), el cual permite que alguin logre cargar un *pluguin* malicioso de Flash.
 
-Leer Más:
+Para más información:
 
 - ["MIME type" on Wikipedia](https://en.wikipedia.org/wiki/Media_type)
 - ["MIME Sniffing: feature or vulnerability?"](https://blog.fox-it.com/2012/05/08/mime-sniffing-feature-or-vulnerability/)
@@ -36,7 +36,7 @@ La Cabecera
 
 La cabecera `X-Content-Type-Options` instruye al navegador para no husmear los *MIME types*. Cuando ésta cabecera está seteada en `nosniff`, El navegador dejará de hacerlo y confiará en lo que el servidor le informe, bloqueando el recurso en caso de no poseer el *MIME type* informado.
 
-Leer más:
+Para más información:
 
 - ["X-Content-Type-Options" on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
 - ["What is 'X-Content-Type-Options=nosniff'?" on Stack Overflow](https://stackoverflow.com/questions/18337630/)

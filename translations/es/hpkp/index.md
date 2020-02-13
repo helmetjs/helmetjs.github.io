@@ -38,7 +38,7 @@ El navegador guardará esas claves por 60 días. Si aquellas claves no coinciden
 
 Observa que Chrome ha dejado de dar soporte para esta cabecera; de ser usada, simplemente será ignorada.
 
-Leer más:
+Para más información:
 
 - [Specification](https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/)
 - ["Public Key Pinning" on MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Public_Key_Pinning)

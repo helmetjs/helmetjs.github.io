@@ -15,7 +15,7 @@ Existen otras cosas que los atacantes pueden hacer, incluso si no pueden ejecuta
 
 El módulo CSP no proteje contra un ataque específico. Aquí lo principal es que no quieres a nadie poniendo nada inesperado dentro de tus sitios.
 
-Leer más:
+Para más información:
 
 * [Cross-site scripting en Wikipedia](https://en.wikipedia.org/wiki/Cross-site_scripting)
 * [Cross-site Scripting en OWASP](https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29)
@@ -46,7 +46,7 @@ Ahora `'self'` y `maxcdn.bootstrapcdn.com` en nuestra lista blanca. los usuarios
 
 Existen muchos matices y sutilezas para CSP: cosas que puedes y no puedes poner en tus listas blancas, sin embargo, los navegadores ofrecen varias prestaciones e incluso cabeceras alternativas para los límites de CSP. Refiérete a los enlaces de abajo para más información.
 
-Leer más:
+Para más información:
 
 - [Una introducción a Content Security Policy en "HTML5 Rocks"](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
 - [Referencia de Content Security Policy](https://content-security-policy.com/)

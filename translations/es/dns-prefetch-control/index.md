@@ -12,7 +12,7 @@ When you visit a URL, your browser has to look up the domain's IP address. For e
 
 Browsers can start these DNS requests before the user even clicks a link or loads a resource from somewhere. This improves performance when the user clicks the link, but has privacy implications for users. It can appear as if a user is visiting things they aren't visiting.
 
-Read more:
+Para más información:
 
 - ["Controlling DNS prefetching" on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching)
 - ["DNS Prefetching" on Chromium docs](https://dev.chromium.org/developers/design-documents/dns-prefetching)
@@ -27,7 +27,7 @@ To disable DNS prefetching, set the `X-DNS-Prefetch-Control` header to `off`. To
 
 Most browsers don't do DNS prefetching so most browsers can ignore this header.
 
-Read more:
+Para más información:
 
 - ["Controlling DNS prefetching" on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching)
 - ["DNS Prefetching" on Chromium docs](https://dev.chromium.org/developers/design-documents/dns-prefetching)

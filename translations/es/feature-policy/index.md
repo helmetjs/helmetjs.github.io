@@ -21,7 +21,7 @@ La cabecera `Feature-Policy` le indica al navegador qué funcionalidades puede u
 Feature-Policy: notifications 'none'; payments example.com
 ```
 
-Leer más:
+Para más información:
 
 - ["A new security header: Feature-Policy"](https://scotthelme.co.uk/a-new-security-header-feature-policy/)
 - [Feature Policy](https://developers.google.com/web/updates/2018/06/feature-policy)

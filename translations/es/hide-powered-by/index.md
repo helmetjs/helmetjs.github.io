@@ -21,7 +21,7 @@ Para ser sinceros, si un hacker está empeñado en hacerte daño, el hecho de no
 
 Otra de las cosas que puede mensionarse al respecto es una pequeña mejora en la *performance* de tu servidor, dado que omitir la emisión de esa cabecera implica que menos bytes serán enviados hacia el usuario.
 
-Leer más:
+Para más información:
 
 - ["Removing the header provides no security benefits"](https://github.com/expressjs/express/pull/2813#issuecomment-159270428)
 

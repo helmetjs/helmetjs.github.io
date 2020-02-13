@@ -23,7 +23,7 @@ Si flash carga algo desde tu sitio y ve eso, entonces sabrá que no debe cargar 
 
 La cabecera posee otros valores que requieren la creación de un archivo `crossdomain.xml` que defina cuáles son tus políticas de dominio cruzado (*"cross-domain"*). Puedes leer más al respecto en los enlaces de abajo.
 
-Read more:
+Para más información:
 
 - ["X-Permitted-Cross-Domain-Policies" sección en OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xpcdp)
 - [Especificaciones de Adobe para las políticas de dominio cruzado](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/xdomain.html)

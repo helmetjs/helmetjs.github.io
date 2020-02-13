@@ -33,7 +33,7 @@ Acabo de robarte el click ("*clickjacked*"), y logré que hicieras *click*  en "
 
 El robo de *clicks* ("*Clickjacking*") puede ser usado para hacerte *clickear* en lugares que no quieres hacerlo. Estos ataques pueden inducirte a hacer *click* en botones dentro de redes sociales, propagandas, e incluso lograr engañarte para hacer cosas más complejas.
 
-Leer más:
+Para más información:
 
 - [Clickjacking article on Wikipedia](https://en.wikipedia.org/wiki/Clickjacking)
 - [Clickjacking Defense Cheat Sheet](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet)
@@ -56,7 +56,7 @@ Si en realidad no estás esperando que tu página sea puesta en un *iframe*, sie
 
 Ésta cabecera tiene un muy buen soporte: IE8+, Opera 10.50+, Safari 4+, Chrome 4.1+, y Firefox 3.6.9+. Pero la opción `ALLOW-FROM` [no está soportada de la misma forma](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options#Browser_compatibility). Aquellos navegadores que no soporten dicha opción ignorarán la cabecera por completo [y el *iframe* **sí** será renderizado](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet#Limitations_2), por lo que quizás deberías evitar usar ésta opción.
 
-Leer Más:
+Para más información:
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options)
 - [Can I Use X-Frame-Options](http://caniuse.com/#feat=x-frame-options)

@@ -19,7 +19,7 @@ La cabecera
 
 La cabecera `X-Download-Options` puede ser asignada a `noopen`. Esto previene que las versiones antiguas de Internet Explorer descargue y ejecute archivos HTML en el contexto de tu sitio.
 
-Leer más:
+Para más información:
 
 - ["IE8 Security Part V: Comprehensive Protection" on MSDN](https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/)
 
