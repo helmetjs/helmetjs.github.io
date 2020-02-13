@@ -1,68 +1,67 @@
 ---
 layout: page
 title: Content Security Policy
-permalink: /docs/csp/
+permalink: /translations/es/csp/
 ---
-In short: the CSP module sets the `Content-Security-Policy` header which can help protect against malicious injection of JavaScript, CSS, plugins, and more.
+Brevemente: el módulo CSP setea la cabecera `Content-Security-Policy`, la cual puede ayudar a proteger contra inyecciones maliciosas de Javascript, CSS, *pluguins*, y más.
 
-The attack
+El ataque
+----------
+Los hackers pueden realizar numerosas maldades si logran poner cosas en tus páginas.
+
+El ataque más sucio es probablemente el *cross-site scripting* (XSS), el cual ocurre cuando un hacker pone código malicioso en tu sitio. Si yo puedo ejecutar Javascript en tu página, entonces puedo hacer cosas malas ahí, desde robar cookies de autenticación hasta registrar las acciones de todos los usuarios.
+
+Existen otras cosas que los atacantes pueden hacer, incluso si no pueden ejecutar Javascript. por ejemplo, si uno pudiera poner una pequeña imagen en tu sitio, 1x1 y transparente, podría tener una buena idea de cuánto tráfico llega a tu sitio. Si uno pudiera lograr que el navegador corriera un [pluguin vulnerable](http://arstechnica.com/security/2015/07/two-new-flash-exploits-surface-from-hacking-team-combine-with-java-0-day/) como flash, entonces podría explotar sus falencias y realizar acciones que desearías evitar.
+
+El módulo CSP no proteje contra un ataque específico. Aquí lo principal es que no quieres a nadie poniendo nada inesperado dentro de tus sitios.
+
+Leer más:
+
+* [Cross-site scripting en Wikipedia](https://en.wikipedia.org/wiki/Cross-site_scripting)
+* [Cross-site Scripting en OWASP](https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29)
+* ["How does a tracking pixel work?" en Quora](https://www.quora.com/How-does-a-tracking-pixel-work)
+
+La Cabecera
 ----------
 
-Hackers can do lots of bad things if they can put things onto your webpages.
+Una de las complicaciones acerca de éstas ataques de inyección de código es que los navegadores no saben qué es bueno y qué es malo. ¿Cómo podría diferenciar entre un archivo de Javascript legítimo y uno malicioso? En muchos casos, no puede... a menos que yu hayas definido *"Content Security Policy*. 
 
-The nastiest attack is probably cross-site scripting (XSS), which is when a hacker puts malicious JavaScript onto your page. If I can run JavaScript on your page, I can do a lot of bad things, from stealing authentication cookies to logging every user action.
+La mayoría de los navegadores modernos soportan la cabecera llamada `Content-Security-Policy`, la cual efectivamente es una lista blanca de las cosas que tienen permitido estar en tu página. Podes permitir Javascript, CSS, imágenes, *pluguins*, y mucho más. Aquí las cosas están "*opt-in*", lo que significa que creas una lista de "**cosas que están permitidas**", en vez de crear una lista de **cosas que NO están permitidas**.
 
-There are other things attackers can do, even if they can't execute JavaScript. For example, if I could put a tiny, transparent 1x1 image on your site, I could get a pretty good idea of how much traffic your site gets. If I could get a [vulnerable browser plugin](http://arstechnica.com/security/2015/07/two-new-flash-exploits-surface-from-hacking-team-combine-with-java-0-day/) like Flash to run, I could exploit its flaws and do things you don't want!
-
-There isn't one specific attack that the CSP module prevents. The main thing is this: you don't want anyone putting anything on your webpages that you don't expect.
-
-Read more:
-
-* [Cross-site scripting on Wikipedia](https://en.wikipedia.org/wiki/Cross-site_scripting)
-* [Cross-site Scripting on OWASP](https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29)
-* ["How does a tracking pixel work?" on Quora](https://www.quora.com/How-does-a-tracking-pixel-work)
-
-The header
-----------
-
-One of the tricky things about these injection attacks is that the browser doesn't know what's good and what's bad. How can it tell the difference between a legitimate JavaScript file and a malicious one? In many cases, it can't...unless you've defined a Content Security Policy.
-
-Most modern browsers support a header called `Content-Security-Policy`, which is effectively a whitelist of things that are allowed to be on your page. You can whitelist JavaScript, CSS, images, plugins, and much more. Things are *opt-in*, so you're saying "this stuff is allowed" instead of "this stuff is _not_ allowed".
-
-Let's say you've got a website that links to no external resources at all—just your stuff. You could set a header that looks like this:
+Digamos que tienes un sitio que no posee enlaces a ningún recurso externo, sólo tus cosas. En ésta situacion podrías setear una cabecera que luzca como ésta:
 
 ```
 Content-Security-Policy: default-src 'self'
 ```
 
-This effectively tells the browser "only load things that are from my own domain". If you're running example.com and a user tries to load `https://example.com/my-javascript.js`, it'll work just fine. But if a user tries to load `http://evil.com/evil.js`, it won't load at all!
+Esto efectivamente le dice al navegador "sólo carga cosas que sean de mi propio dominio". Si estás corriendo *ejemplo.com* y un usuario trata de cargar `https://ejemplo.com/mi-javascript.js`, entonces todo va a ejecutarse bien. ¡Pero si un usuario trata de ejecutar `https://maligno.com/maligno.js`, entonces nada va a cargarse!
 
-Now, let's say you want to also allow CSS from Bootstrap's CDN. You could set a CSP that looks like this:
+Ahora, digamos que sí quieres permitir la carga de CSS de Bootstrap desde su CDN. Entonces podrías setear una CSP que luzca como ésta:
 
 ```
 Content-Security-Policy: default-src 'self'; style-src 'self' maxcdn.bootstrapcdn.com
 ```
 
-Now we've whitelisted `'self'` and `maxcdn.bootstrapcdn.com`. The user will be able to load CSS from there, but nothing else. The user won't even be able to load JavaScript or images from that URL, either—only stylesheets.
+Ahora `'self'` y `maxcdn.bootstrapcdn.com` en nuestra lista blanca. los usuarios podrán cargar CSS desde ahí, pero desde ningún otro lugar. Los usuarios ni siquiera tendrán permitido cargar Javascriot o imágenes desde la nueva CDN, sólamente hojas de estilo.
 
-There are a lot of nuances to CSP: what you can and can't whitelist, browser support for various features, and alternate headers. Refer to the stuff below for more information.
+Existen muchos matices y sutilezas para CSP: cosas que puedes y no puedes poner en tus listas blancas, sin embargo, los navegadores ofrecen varias prestaciones e incluso cabeceras alternativas para los límites de CSP. Refiérete a los enlaces de abajo para más información.
 
-Read more:
+Leer más:
 
-- [An introduction to Content Security Policy on HTML5 Rocks](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
-- [Content Security Policy Reference](https://content-security-policy.com/)
+- [Una introducción a Content Security Policy en "HTML5 Rocks"](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
+- [Referencia de Content Security Policy](https://content-security-policy.com/)
 - [Can I Use Content Security Policy 1.0](http://caniuse.com/#feat=contentsecuritypolicy)
 - [Can I Use Content Security Policy 2.0](http://caniuse.com/#feat=contentsecuritypolicy2)
 
-The code
+El código
 --------
 
-Helmet's `csp` module helps set Content Security Policies.
+El módulo `csp` de Helmet ayuda a setear la cabecera *"Content Security Policies"*.
 
-You can use this module as part of Helmet:
+Puedes usar éste módulo como una parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegurate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
 app.use(helmet.contentSecurityPolicy({
@@ -73,10 +72,10 @@ app.use(helmet.contentSecurityPolicy({
 }))
 ```
 
-You can also use it as a standalone module:
+También puede usar el módulo en solitario:
 
 ```javascript
-// Make sure you run "npm install helmet-csp" to get the csp package.
+// Asegurate de haber ejecutado "npm install helmet-csp" para obtener el paquete de CSP.
 const csp = require('helmet-csp')
 
 app.use(csp({
@@ -87,11 +86,11 @@ app.use(csp({
 }))
 ```
 
-This header is not included in the default Helmet bundle.
+Esta cabecera no está incluida por defecto en Helmet.
 
-### Directives
+### Directivas
 
-All of your CSP directives (like `default-src`, `style-src`) are placed under the `directives` option.
+Todas tus directivas hacia CSP (like `default-src`, `style-src`) están ubicadas en la opción `directives`.
 
 ```javascript
 app.use(csp({
@@ -102,45 +101,45 @@ app.use(csp({
     reportUri: '/report-violation',
     objectSrc: ["'none'"],
     upgradeInsecureRequests: true,
-    workerSrc: false  // This is not set.
+    workerSrc: false  // Esto no está seteado.
   }
 }))
 ```
 
-Directives can be kebab-cased (like `script-src`) or camel-cased (like `scriptSrc`); they are equivalent.
+Las directivas pueden estar separadas por guiones (como `script-src`) o usar *camel case* (como `scriptSrc`); ambas son equivalentes.
 
-The following directives are supported:
+Las siguientes directivas están soportadas:
 
-* `base-uri` or `baseUri`
-* `block-all-mixed-content` or `blockAllMixedContent`
-* `child-src` or `childSrc`
-* `connect-src` or `connectSrc`
-* `default-src` or `defaultSrc`
-* `font-src` or `fontSrc`
-* `form-action` or `formAction`
-* `frame-ancestors` or `frameAncestors`
-* `frame-src` or `frameSrc`
-* `img-src` or `imgSrc`
-* `manifest-src` or `manifestSrc`
-* `media-src` or `mediaSrc`
-* `object-src` or `objectSrc`
-* `plugin-types` or `pluginTypes`
-* `prefetch-src` or `prefetchSrc`
-* `report-to` or `reportTo`
-* `report-uri` or `reportUri`
-* `require-sri-for` or `requireSriFor`
-* `sandbox` or `sandbox`
-* `script-src` or `scriptSrc`
-* `style-src` or `styleSrc`
-* `upgrade-insecure-requests` or `upgradeInsecureRequests`
-* `worker-src` or `workerSrc`
+* `base-uri` o `baseUri`
+* `block-all-mixed-content` o `blockAllMixedContent`
+* `child-src` o `childSrc`
+* `connect-src` o `connectSrc`
+* `default-src` o `defaultSrc`
+* `font-src` o `fontSrc`
+* `form-action` o `formAction`
+* `frame-ancestors` o `frameAncestors`
+* `frame-src` o `frameSrc`
+* `img-src` o `imgSrc`
+* `manifest-src` o `manifestSrc`
+* `media-src` o `mediaSrc`
+* `object-src` o `objectSrc`
+* `plugin-types` o `pluginTypes`
+* `prefetch-src` o `prefetchSrc`
+* `report-to` o `reportTo`
+* `report-uri` o `reportUri`
+* `require-sri-for` o `requireSriFor`
+* `sandbox` o `sandbox`
+* `script-src` o `scriptSrc`
+* `style-src` o `styleSrc`
+* `upgrade-insecure-requests` o `upgradeInsecureRequests`
+* `worker-src` o `workerSrc`
 
-### CSP violations
+### Violaciones de CSP
 
-If you've specified a `reportUri`, browsers will POST any CSP violations to your server. Here's a simple example of an Express route that handles those reports:
+Si has especificado una violación de las políticas de seguridad de contendio ("*CSP Violations*") usando `reportUri`, los navegadores realizaran una petición POST a tu servidor con el contenido de las violaciones a CSP. He aquí un ejemplo simple de una ruta de Express encargada de manejar esas peticiones:
 
 ```js
-// You need a JSON parser first.
+// Necesitarás JSON parser primero.
 app.use(bodyParser.json({
   type: ['json', 'application/csp-report']
 }))
@@ -156,11 +155,11 @@ app.post('/report-violation', (req, res) => {
 })
 ```
 
-Not all browsers send CSP violations in the same way, so this might require a little work.
+No todos los navegadores envían las violaciones a la política de seguridad de contenidos ("*CSP Violations*") de la misma forma, por lo que ésto quizás requiera un trabajo un poco más específico.
 
-*Note*: If you're using a CSRF module like [csurf](https://github.com/expressjs/csurf), you might have problems handling these violations without a valid CSRF token. The fix is to put your CSP report route *above* csurf middleware.
+*Nota*: Si estas usando un modulo CSRF como [csurf](https://github.com/expressjs/csurf), puede que tengas problemas manejando éste tipo de violaciones sin un token valido de CRSF. Para arreglar esto pon tu ruta de reportes de CSP antes de tu tu función middleware de *csurf*.
 
-This module's `reportOnly` option will switch the header to `Content-Security-Policy-Report-Only`. This instructs browsers to report violations to the `reportUri` (if specified) but it will not block any resources from loading.
+La opción `reportOnly` de éste módulo se encarga de cambiar la cabecera a `Content-Security-Policy-Report-Only`. Esto instruye a los navegadores a reportar las violaciones a la dirección especificada en `reportUri` (en caso de estar especificada) pero no denegará la carga de ningún recurso.
 
 ```javascript
 app.use(csp({
@@ -170,8 +169,7 @@ app.use(csp({
   reportOnly: true
 })
 ```
-
-You may also set this to a function to decide dynamically whether to use `reportOnly` mode. You could use this for a dynamic kill switch. This function will be called with the request and response objects and must return a boolean.
+Tambén puedes asignar esto a una función para decidir de manera dinámica cuándo usar el modo `reportOnly`. Puedes usar ésto como un disyuntor dinámico. En éste caso, la función es llamada usando los objetos "*request*" y "*response*" y debe retornar una variable de tipo *Boolean*.
 
 ```javascript
 app.use(csp({
@@ -182,11 +180,11 @@ app.use(csp({
 })
 ```
 
-### Browser sniffing
+### Browser sniffing (detección de navegadores).
 
-By default, this module will look at the incoming `User-Agent` header and send different headers depending on the detected browser. For example, Chrome prior to version 25 uses an alternate header called `X-WebKit-CSP`, and this module handles that. If no browser is detected, this module will set all the headers with the 2.0 spec.
+Por defecto, éste módulo se fijará en la cabecera `User-Agent` entrante y enviará diferentes cabeceras dependiendo en el navegador detectado. por ejemplo, las versiones previas a Chrome 25 usan una cabecera alternativa llamada `X-WebKit-CSP`, el cuál también es manejado por éste módulo. Si ningún navegador es detectado, entonces las cabeceras serán seteadas con las especificaciones 2.0.
 
-To disable this browser sniffing and assume a modern browser, set the `browserSniff` option to `false`.
+Para deshabilitar la detección de navegadores y asumir todas las peticiones desde navegadores modernos, es necesario setear la opción `browserSniff` en `false`.
 
 ```javascript
 app.use(csp({
@@ -196,8 +194,7 @@ app.use(csp({
   browserSniff: false
 })
 ```
-
-To set all headers, including legacy ones, set the `setAllHeaders` option to `true`. Note that this will change the value of the headers based on `User-Agent`. You can disable this by using the `browserSniff: false` option above.
+Para setear todas las cabeceras, incluidas las que son *legacy*, asigna la opción `setAllHeaders` en `true`. Observa que esto cambiará el valor de las demás cabeceras basadas en `User-Agent`. Puedes deshabilitar esto usando la opción `browserSniff: false` como es indicado abajo:
 
 ```javascript
 app.use(csp({
@@ -207,8 +204,7 @@ app.use(csp({
   setAllHeaders: true
 })
 ```
-
-Old Android browsers can be very buggy. This is `false` by default.
+Los navegadores Android antiguos pueden estan un poco "buggeados", así que esto está seteado como `false` por defecto.
 
 ```javascript
 app.use(csp({
@@ -219,9 +215,9 @@ app.use(csp({
 })
 ```
 
-### Generating nonces
+### Generando instancias
 
-You can dynamically generate nonces to allow inline `<script>` tags to be safely evaluated. Here's a simple example:
+Puedes generar instancias de forma dinámica para permitir que los bloques `<script>` sean evaluados de manera segura. He aquí un ejemplo:
 
 ```js
 const uuidv4 = require('uuid/v4')
@@ -245,6 +241,6 @@ app.use(function (req, res) {
 })
 ```
 
-### Using CSP with a CDN
+### Usando CSP con una CDN
 
-The default behavior of CSP is generate headers tailored for the browser that's requesting your page. If you have a CDN in front of your application, the CDN may cache the wrong headers, rendering your CSP useless. Make sure to eschew a CDN when using this module or set the `browserSniff` option to `false`.
+Por defecto el comportamiento de las CSP es generar cabeceras adaptadas para el navegador que está haciendo las peticiones a tu sitio. Si estás usando una CDN en frente de tu aplicación, la CDN puede que cachée las cabeceras equivocadas, volviendo tus CSP inútiles. Asegúrate de no usar una CDN cuando uses este módulo, o recuerda asignar la opción `browserSniff` en `false`.
