@@ -1,89 +1,89 @@
 ---
 layout: page
 title: Referrer Policy
-permalink: /docs/referrer-policy/
+permalink: /translations/es/referrer-policy/
 ---
-In short: the Referrer Policy module can control the behavior of the `Referer` header by setting the `Referrer-Policy` header.
+Brevemente: el módulo "*Referrer Policy*" puede controlar el comportamiento de la cabecera `Referer` seteando la cabecera `Referrer-Policy`.
 
-The attack
+El Ataque
 ----------
 
-The [`Referer` HTTP header](https://en.wikipedia.org/wiki/HTTP_referer) is typically set by web browsers to tell a server where it's coming from. For example, if you click a link on `example.com/index.html` that takes you to `wikipedia.org`, Wikipedia's servers will see `Referer: example.com`.
+La [cabecera HTTP`Referer`](https://en.wikipedia.org/wiki/HTTP_referer) normalmente es seteada por los navegadores para informar al servidor de dónde vienen. Por ejemplo, si haz hecho click en un enlace dentro de `example.com/index.html` y eso te lleva hacia `wikipedia.org`, Los servidores de Wikipedia verán lo siguiente `Referer: example.com`.
 
-This can have privacy implications—websites can see where users are coming from.
+Esto puede tener implicancias que respectan a la privacidad, debido a que los servidores y sitios web pueden inferir desde dónde vienen los usuarios.
 
-Read more:
+Para más información:
 
 - [Referer header specification](https://tools.ietf.org/html/rfc7231#section-5.5.2)
 - ["HTTP referer" on Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer)
 
-The header
+La cabecera
 ----------
 
-The new [`Referrer-Policy` HTTP header](https://www.w3.org/TR/referrer-policy/#referrer-policy-header) lets authors control how browsers set the `Referer` header.
+La nueva cabecera HTTP [`Referrer-Policy`](https://www.w3.org/TR/referrer-policy/#referrer-policy-header) permite que los autores controlen cómo los navegadores seteanla cabecera `Referer`.
 
-For example, when supported browsers see this header, they will set no `Referer` header at all:
+Por ejemplo, cuando un navegador que soporta ésta funcionalidad ve ésta cabecera `Referrer-Policy` entonces no setearán ninguna cabecera `Referer`:
 
 ```
 Referrer-Policy: no-referrer
 ```
 
-There are other directives, too. `same-origin`, for example, will only send the `Referer` header for pages on the same origin.
+Existen otras directivas también. `same-origin`, por ejemplo, sólo enviará la cabecera `Referer` a paginas que posean el mismo origen.
 
 ```
 Referrer-Policy: same-origin
 ```
 
-You can see the full list of directives on [the specification](https://www.w3.org/TR/referrer-policy/#referrer-policies).
+Puedes ver la lista completa de directivas en [en la escpecificación del protocolo](https://www.w3.org/TR/referrer-policy/#referrer-policies).
 
-Browser support for this header is mixed.
+El soporte de ésta funcionalidad no es homogéneo.
 
-Read more:
+Para más información:
 
 - [Referrer-Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policy-header)
 - [Can I Use Referrer Policy](http://caniuse.com/#feat=referrer-policy)
 
-The code
+El código
 --------
 
-Helmet's Referrer Policy module is a relatively simple middleware that will set the `Referrer-Policy` header.
+El módulo *Referrer Policy* de Helmet es una función middleware relativamente sencilla que setea la cabecera `Referrer-Policy`.
 
-You can use this module as part of Helmet:
+Puedes utilizar éste módulo como parte de Helmet:
 
 ```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
+// Asegúrate de haber ejecutado "npm install helmet" para obtener el paquete de Helmet.
 const helmet = require('helmet')
 
-// Sets "Referrer-Policy: same-origin".
+// Setea "Referrer-Policy: same-origin".
 app.use(helmet.referrerPolicy({ policy: 'same-origin' }))
 ```
 
-You can also use it as a standalone module:
+También puedes usar éste módulo en solitario
 
 ```javascript
-// Make sure you run "npm install referrer-policy" to get the referrer-policy package.
+// Asegúrate de haber ejecutado "npm install referrer-policy" para obtener el paquete.
 const referrerPolicy = require('referrer-policy')
 
-// Sets "Referrer-Policy: no-referrer".
+// Setea "Referrer-Policy: no-referrer".
 app.use(referrerPolicy({ policy: 'no-referrer' }))
 ```
 
-Once you've required it, you can use it in your apps:
+Una vez que lo hayas requerido, puedes usarlo en tus aplicaciones:
 
 ```javascript
-// Sets "Referrer-Policy: same-origin".
+// Setea "Referrer-Policy: same-origin".
 app.use(helmet.referrerPolicy({ policy: 'same-origin' }))
 
-// Sets "Referrer-Policy: unsafe-url".
+// Setea "Referrer-Policy: unsafe-url".
 app.use(helmet.referrerPolicy({ policy: 'unsafe-url' }))
 
-// Sets "Referrer-Policy: no-referrer,unsafe-url"
+// Setea "Referrer-Policy: no-referrer,unsafe-url"
 app.use(helmet.referrerPolicy({
   policy: ['no-referrer', 'unsafe-url']
 }))
 
-// Sets "Referrer-Policy: no-referrer".
+// Setea "Referrer-Policy: no-referrer".
 app.use(helmet.referrerPolicy())
 ```
 
-This header is not included in the default Helmet bundle.
+Esta cabecera **no está incluida** por defecto en el paquete de Helmet.
