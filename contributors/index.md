@@ -84,6 +84,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [csp#31](https://github.com/helmetjs/csp/pull/31)
   - [Partha Ramanujam](https://www.npmjs.com/~partharamanujam)
     - [referrer-policy#2](https://github.com/helmetjs/referrer-policy/pull/2)
+  - [Paul Cowan](https://github.com/dagda1)
+    - [hsts#13](https://github.com/helmetjs/csp/pull/101)
   - [Paul Wright](https://github.com/pwright08)
     - [hsts#13](https://github.com/helmetjs/hsts/pull/13)
   - [renehamburger](https://github.com/renehamburger)
