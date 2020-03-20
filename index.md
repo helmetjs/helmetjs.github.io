@@ -25,7 +25,7 @@ That's it! Helmet will set various HTTP headers to help protect your app.
 How it works
 ============
 
-Helmet is a collection of 13 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
+Helmet is a collection of 12 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
 
 You can see more in [the documentation](/docs).
 
@@ -39,7 +39,6 @@ You can see more in [the documentation](/docs).
 | [hidePoweredBy](/docs/hide-powered-by) to remove the X-Powered-By header | ✓ |
 | [hsts](/docs/hsts/) for HTTP Strict Transport Security | ✓ |
 | [ieNoOpen](/docs/ienoopen) sets X-Download-Options for IE8+ | ✓ |
-| [noCache](/docs/nocache/) to disable client-side caching |  |
 | [noSniff](/docs/dont-sniff-mimetype) to keep clients from sniffing the MIME type | ✓ |
 | [permittedCrossDomainPolicies](/docs/crossdomain/) for handling Adobe products' crossdomain requests |  |
 | [referrerPolicy](/docs/referrer-policy) to hide the Referer header |  |

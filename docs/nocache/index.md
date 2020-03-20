@@ -3,6 +3,9 @@ layout: page
 title: No Cache
 permalink: /docs/nocache/
 ---
+<div class="callout">
+  <strong>This middleware has been deprecated.</strong> It will be removed in Helmet 4. You can still read the documentation here.
+</div>
 In short: the `nocache` middleware aims to disable browser caching by setting several headers.
 
 The "attack"
@@ -36,18 +39,7 @@ Read more:
 The code
 --------
 
-Helmet's `noCache` is a relatively simple middleware that will set the four HTTP headers noted above: `Cache-Control`, `Surrogate-Control`, `Pragma`, and `Expires`.
-
-You can use this module as part of Helmet:
-
-```javascript
-// Make sure you run "npm install helmet" to get the Helmet package.
-const helmet = require('helmet')
-
-app.use(helmet.noCache())
-```
-
-You can also use it as a standalone module:
+`nocache` is a relatively simple middleware that will set the four HTTP headers noted above: `Cache-Control`, `Surrogate-Control`, `Pragma`, and `Expires`.
 
 ```javascript
 // Make sure you run "npm install nocache" to get the nocache package.
@@ -56,4 +48,4 @@ const noCache = require('nocache')
 app.use(noCache())
 ```
 
-This header is *not* included in the default Helmet bundle.
+This header is *not* included in the default Helmet bundle, and will be removed in future versions of Helmet.

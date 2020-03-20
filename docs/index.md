@@ -3,7 +3,7 @@ layout: page
 title: Docs
 permalink: /docs/
 ---
-Helmet is a collection of 13 middleware functions to help set some HTTP response headers.
+Helmet is a collection of 12 middleware functions to help set some HTTP response headers.
 
 First, run `npm install helmet --save` for your app. Then, in an Express (or Connect) app:
 
@@ -23,8 +23,8 @@ It's best to `use` Helmet early in your middleware stack so that its headers are
 You can also use its pieces individually:
 
 ```js
-app.use(helmet.noCache())
 app.use(helmet.frameguard())
+app.use(helmet.ieNoOpen())
 ```
 
 You can disable a middleware that's normally enabled by default. This will disable `frameguard` but include the other defaults.
@@ -59,7 +59,6 @@ Visit each module's page to learn more.
 | [hidePoweredBy](hide-powered-by) to remove the X-Powered-By header | ✓ |
 | [hsts](hsts) for HTTP Strict Transport Security | ✓ |
 | [ieNoOpen](ienoopen) sets X-Download-Options for IE8+ | ✓ |
-| [noCache](nocache) to disable client-side caching |  |
 | [noSniff](dont-sniff-mimetype) to keep clients from sniffing the MIME type | ✓ |
 | [permittedCrossDomainPolicies](crossdomain) for handling Adobe products' crossdomain requests |  |
 | [referrerPolicy](referrer-policy) to hide the Referer header |  |
