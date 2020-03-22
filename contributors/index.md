@@ -10,6 +10,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
 - Lead maintainer: [Evan Hahn](https://evanhahn.com)
 
 - Other contributors
+  - [Agam Dua](https://twitter.com/loopbackdev)
+    - [csp#100](https://github.com/helmetjs/csp/pull/100)
   - [Alberto Gimeno](http://gimenete.net/)
     - [frameguard#2](https://github.com/helmetjs/frameguard/pull/2)
   - [Alejandro Oviedo](https://elendur.com/)
