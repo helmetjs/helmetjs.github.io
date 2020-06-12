@@ -54,7 +54,6 @@ Visit each module's page to learn more.
 | [contentSecurityPolicy](csp) for setting Content Security Policy |  |
 | [dnsPrefetchControl](dns-prefetch-control) controls browser DNS prefetching | ✓ |
 | [expectCt](expect-ct) for handling Certificate Transparency |  |
-| [featurePolicy](feature-policy) to limit your site's features | |
 | [frameguard](frameguard) to prevent clickjacking | ✓ |
 | [hidePoweredBy](hide-powered-by) to remove the X-Powered-By header | ✓ |
 | [hsts](hsts) for HTTP Strict Transport Security | ✓ |

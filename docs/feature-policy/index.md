@@ -3,6 +3,10 @@ layout: page
 title: Feature-Policy
 permalink: /docs/feature-policy/
 ---
+<div class="callout">
+  <strong>This middleware has been deprecated because the <code>Feature-Policy</code> header is deprecated.</strong> It will be removed in Helmet 4.
+</div>
+
 In short: Helmet's `featurePolicy` middleware lets you restrict which browser features can be used. For example, you can disable fullscreen or vibration APIs.
 
 The "attack"

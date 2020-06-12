@@ -25,7 +25,7 @@ That's it! Helmet will set various HTTP headers to help protect your app.
 How it works
 ============
 
-Helmet is a collection of 12 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
+Helmet is a collection of 11 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
 
 You can see more in [the documentation](/docs).
 
@@ -34,7 +34,6 @@ You can see more in [the documentation](/docs).
 | [contentSecurityPolicy](/docs/csp/) for setting Content Security Policy |  |
 | [dnsPrefetchControl](/docs/dns-prefetch-control) controls browser DNS prefetching | ✓ |
 | [expectCt](/docs/expect-ct/) for handling Certificate Transparency |  |
-| [featurePolicy](/docs/feature-policy/) to limit your site's features |  |
 | [frameguard](/docs/frameguard/) to prevent clickjacking | ✓ |
 | [hidePoweredBy](/docs/hide-powered-by) to remove the X-Powered-By header | ✓ |
 | [hsts](/docs/hsts/) for HTTP Strict Transport Security | ✓ |
