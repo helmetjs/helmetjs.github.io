@@ -97,6 +97,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Sakthipriyan Vairamani (thefourtheye)](http://thefourtheye.in/)
     - [helmet#62](https://github.com/helmetjs/helmet/pull/62)
     - [helmet#63](https://github.com/helmetjs/helmet/pull/63)
+  - [Sasa Cvetkovic](https://github.com/salesh)
+    - [helmet#286](https://github.com/helmetjs/helmet/pull/286)
   - [Shane Tomlinson](https://shanetomlinson.com)
     - [csp#43](https://github.com/helmetjs/csp/pull/43)
   - [Tara Vancil](https://taravancil.com)
