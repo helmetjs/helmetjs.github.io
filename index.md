@@ -24,7 +24,7 @@ app.use(helmet());
 
 Helmet is [Connect](https://github.com/senchalabs/connect)-style middleware, which is compatible with frameworks like [Express](https://expressjs.com/). (If you need support for Koa, see [`koa-helmet`](https://github.com/venables/koa-helmet).)
 
-The top-level `helmet` function is a wrapper around 11 smaller middlewares.
+The top-level `helmet` function is a wrapper around 15 smaller middlewares, 11 of which are enabled by default.
 
 In other words, these two things are equivalent:
 
@@ -73,9 +73,9 @@ app.use(
 <details>
 <summary><code>helmet(options)</code></summary>
 
-Helmet is the top-level middleware for this module, including all 11 others.
+Helmet is the top-level middleware for this module, including all 15 others.
 
-All 11 middlewares are enabled by default.
+11 of 15 middlewares are included by default. `crossOriginEmbedderPolicy`, `crossOriginOpenerPolicy`, `crossOriginResourcePolicy`, and `originAgentCluster` are not included by default. They must be explicitly enabled. They will be turned on by default in the next major version of Helmet.
 
 ```js
 // Includes all 11 middlewares
@@ -213,6 +213,106 @@ You can install this module separately as `helmet-csp`.
 </details>
 
 <details>
+<summary><code>helmet.crossOriginEmbedderPolicy()</code></summary>
+
+`helmet.crossOriginEmbedderPolicy` sets the `Cross-Origin-Embedder-Policy` header to `require-corp`. See [MDN's article on this header](https://developer.cdn.mozilla.net/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) for more.
+
+This middleware is not included when calling `helmet()` by default, and must be enabled explicitly. It will be enabled by default in the next major version of Helmet.
+
+Example usage with Helmet:
+
+```js
+// Uses the default Helmet options and adds the `crossOriginEmbedderPolicy` middleware.
+// Sets "Cross-Origin-Embedder-Policy: require-corp"
+app.use(helmet({ crossOriginEmbedderPolicy: true }));
+```
+
+Standalone example:
+
+```js
+// Sets "Cross-Origin-Embedder-Policy: require-corp"
+app.use(helmet.crossOriginEmbedderPolicy());
+```
+
+You can't install this module separately.
+
+</details>
+
+<details>
+<summary><code>helmet.crossOriginOpenerPolicy()</code></summary>
+
+`helmet.crossOriginOpenerPolicy` sets the `Cross-Origin-Opener-Policy` header. For more, see [MDN's article on this header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+
+This middleware is not included when calling `helmet()` by default, and must be enabled explicitly. It will be enabled by default in the next major version of Helmet.
+
+Example usage with Helmet:
+
+```js
+// Uses the default Helmet options and adds the `crossOriginOpenerPolicy` middleware.
+
+// Sets "Cross-Origin-Opener-Policy: same-origin"
+app.use(helmet({ crossOriginOpenerPolicy: true }));
+
+// Sets "Cross-Origin-Opener-Policy: same-origin-allow-popups"
+app.use(
+  helmet({ crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" } })
+);
+```
+
+Standalone example:
+
+```js
+// Sets "Cross-Origin-Opener-Policy: same-origin"
+app.use(helmet.crossOriginOpenerPolicy());
+
+// Sets "Cross-Origin-Opener-Policy: same-origin-allow-popups"
+app.use(helmet.crossOriginOpenerPolicy({ policy: "same-origin-allow-popups" }));
+
+// Sets "unsafe-none-Opener-Policy: unsafe-none"
+app.use(helmet.crossOriginOpenerPolicy({ policy: "unsafe-none" }));
+```
+
+You can't install this module separately.
+
+</details>
+
+<details>
+<summary><code>helmet.crossOriginResourcePolicy()</code></summary>
+
+`helmet.crossOriginResourcePolicy` sets the `Cross-Origin-Resource-Policy` header. For more, see ["Consider deploying Cross-Origin Resource Policy](https://resourcepolicy.fyi/) and [MDN's article on this header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
+
+This middleware is not included when calling `helmet()` by default, and must be enabled explicitly. It will be enabled by default in the next major version of Helmet.
+
+Example usage with Helmet:
+
+```js
+// Uses the default Helmet options and adds the `crossOriginResourcePolicy` middleware.
+
+// Sets "Cross-Origin-Resource-Policy: same-origin"
+app.use(helmet({ crossOriginResourcePolicy: true }));
+
+// Sets "Cross-Origin-Resource-Policy: same-site"
+app.use(helmet({ crossOriginResourcePolicy: { policy: "same-site" } }));
+```
+
+Standalone example:
+
+```js
+// Sets "Cross-Origin-Resource-Policy: same-origin"
+app.use(helmet.crossOriginResourcePolicy());
+
+// Sets "Cross-Origin-Resource-Policy: same-site"
+app.use(helmet.crossOriginResourcePolicy({ policy: "same-site" }));
+
+// Sets "Cross-Origin-Resource-Policy: cross-origin"
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+```
+
+You can't install this module separately.
+
+</details>
+
+<details>
 <summary><code>helmet.expectCt(options)</code></summary>
 
 `helmet.expectCt` sets the `Expect-CT` header which helps mitigate misissued SSL certificates. See [MDN's article on Certificate Transparency](https://developer.mozilla.org/en-US/docs/Web/Security/Certificate_Transparency) and the [`Expect-CT` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT) for more.
@@ -341,9 +441,17 @@ You can install this module separately as `dont-sniff-mimetype`.
 
 `helmet.originAgentCluster` sets the `Origin-Agent-Cluster` header, which provides a mechanism to allow web applications to isolate their origins. Read more about it [in the spec](https://whatpr.org/html/6214/origin.html#origin-keyed-agent-clusters).
 
-This middleware takes no options.
+This middleware is not included when calling `helmet()` by default, and must be enabled explicitly. It will be enabled by default in the next major version of Helmet.
 
-Examples:
+Example usage with Helmet:
+
+```js
+// Uses the default Helmet options and adds the `originAgentCluster` middleware.
+// Sets "Origin-Agent-Cluster: ?1"
+app.use(helmet({ originAgentCluster: true }));
+```
+
+Standalone example:
 
 ```js
 // Sets "Origin-Agent-Cluster: ?1"
