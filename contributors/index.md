@@ -114,3 +114,5 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [hsts#14](https://github.com/helmetjs/hsts/pull/14)
   - [Victor Brouk](https://github.com/vintik)
     - [helmetjs.github.io#21](https://github.com/helmetjs/helmetjs.github.io/pull/21)
+  - [ArthurKa](https://github.com/ArthurKa)
+    - [helmet#303](https://github.com/helmetjs/helmet/pull/303)
