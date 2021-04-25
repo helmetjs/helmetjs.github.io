@@ -16,6 +16,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [frameguard#2](https://github.com/helmetjs/frameguard/pull/2)
   - [Alejandro Oviedo](https://elendur.com/)
     - [helmet#124](https://github.com/helmetjs/helmet/pull/124)
+  - [ArthurKa](https://github.com/ArthurKa)
+    - [helmet#303](https://github.com/helmetjs/helmet/pull/303)
   - [Benno van den Berg](https://github.com/hatchan)
     - [helmet#2](https://github.com/helmetjs/helmet/pull/2)
     - [hpkp#2](https://github.com/helmetjs/hpkp/pull/2)
