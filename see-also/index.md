@@ -19,6 +19,7 @@ This module also exists in other environments. Some are direct ports where other
 * Dropwizard (Java framework): [dropwizard-web-security](https://github.com/palantir/dropwizard-web-security)
 * Elixir: [SecureHeaders](https://github.com/anotherhale/secure_headers)
 * Ember.js (JavaScript framework): [ember-cli-content-security-policy](https://github.com/rwjblue/ember-cli-content-security-policy/)
+* Fastify (Node framework): [fastify-helmet](https://github.com/fastify/fastify-helmet)
 * Flask (Python framework): [Talisman](https://github.com/GoogleCloudPlatform/flask-talisman)
 * Go: [secure](https://github.com/unrolled/secure); [secureheader](https://godoc.org/github.com/kr/secureheader)
 * Hapi (Node framework): [blankie](https://github.com/nlf/blankie)
