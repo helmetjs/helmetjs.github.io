@@ -81,6 +81,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmet#81](https://github.com/helmetjs/helmet/pull/81)
   - [Michael Kebbekus](https://github.com/makebbekus)
     - [nocache#3](https://github.com/helmetjs/nocache/pull/3)
+  - [Mitchell Cash](https://mitchellcash.com)
+    - [helmet#345](https://github.com/helmetjs/helmet/pull/345)
   - [Mo Binni](https://twitter.com/mobinni)
     - [helmet#119](https://github.com/helmetjs/helmet/pull/119)
   - [Nathan Shively-Sanders](https://github.com/sandersn)
