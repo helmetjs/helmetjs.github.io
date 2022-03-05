@@ -1,7 +1,7 @@
-source 'https://rubygems.org' do
-  gem 'jekyll'
+source 'https://rubygems.org'
 
-  group :jekyll_plugins do
-    gem 'jekyll-commonmark-ghpages'
-  end
+gem 'jekyll'
+
+group :jekyll_plugins do
+  gem 'jekyll-commonmark-ghpages'
 end
