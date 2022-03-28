@@ -4,5 +4,4 @@ description: Helmet helps you secure your Express.js apps by setting various HTT
 helmet_version: "5.0.2"
 baseurl: ""
 url: "https://helmetjs.github.io"
-
 markdown: CommonMarkGhPages
