@@ -60,6 +60,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [csp#45](https://github.com/helmetjs/csp/pull/45)
   - [Jason Karns](https://jasonkarns.com)
     - [helmetjs.github.io#20](https://github.com/helmetjs/helmetjs.github.io/pull/20)
+  - [Jocelyn Badgley](https://twipped.com)
+    - [helmet#365](https://github.com/helmetjs/helmet/pull/365)
   - Joe Lutz
     - [helmet#68](https://github.com/helmetjs/helmet/pull/68)
   - Jon Buckley
