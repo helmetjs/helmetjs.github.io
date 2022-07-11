@@ -47,6 +47,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [helmet#315](https://github.com/helmetjs/helmet/pull/315)
     - [helmet#316](https://github.com/helmetjs/helmet/pull/316)
     - [helmet#367](https://github.com/helmetjs/helmet/pull/367)
+    - [nocache#22](https://github.com/helmetjs/nocache/pull/22)
   - [Gar](https://danger.computer/)
     - [helmet#9](https://github.com/helmetjs/helmet/pull/9)
   - [George Zografos](https://github.com/gzog)
