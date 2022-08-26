@@ -33,11 +33,10 @@ app.use(helmet());
 By default, Helmet sets the following headers:
 
 ```http
-Content-Security-Policy: default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+Content-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
-Expect-CT: max-age=0
 Origin-Agent-Cluster: ?1
 Referrer-Policy: no-referrer
 Strict-Transport-Security: max-age=15552000; includeSubDomains
@@ -155,7 +154,7 @@ Each middleware's name is listed below.
 Default:
 
 ```http
-Content-Security-Policy: default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+Content-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
 ```
 
 `helmet.contentSecurityPolicy` sets the `Content-Security-Policy` header which helps mitigate cross-site scripting attacks, among other things. See [MDN's introductory article on Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
@@ -168,7 +167,6 @@ These directives are merged into a default policy, which you can disable by sett
 
     default-src 'self';
     base-uri 'self';
-    block-all-mixed-content;
     font-src 'self' https: data:;
     form-action 'self';
     frame-ancestors 'self';
@@ -373,6 +371,8 @@ Expect-CT: max-age=0
 ```
 
 `helmet.expectCt` sets the `Expect-CT` header which helps mitigate misissued SSL certificates. See [MDN's article on Certificate Transparency](https://developer.mozilla.org/en-US/docs/Web/Security/Certificate_Transparency) and the [`Expect-CT` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT) for more.
+
+`Expect-CT` is no longer useful for new browsers in 2022. Therefore, `helmet.expectCt` is deprecated and will be removed in the next major version of Helmet. However, it can still be used in this version of Helmet.
 
 `options.maxAge` is the number of seconds to expect Certificate Transparency. It defaults to `0`.
 
