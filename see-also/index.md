@@ -15,6 +15,7 @@ This module also exists in other environments. Some are direct ports where other
 
 * ASP.NET: [NWebsec](https://docs.nwebsec.com/en/latest/index.html)
 * Crystal: [crystal-helmet](https://github.com/EvanHahn/crystal-helmet)
+* Dart: [shelf_helmet](https://github.com/jxstxn1/shelf_helmet)
 * Django (Python framework): [django-csp](https://django-csp.readthedocs.io/en/latest/)
 * Dropwizard (Java framework): [dropwizard-web-security](https://github.com/palantir/dropwizard-web-security)
 * Elixir: [SecureHeaders](https://github.com/anotherhale/secure_headers)
