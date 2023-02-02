@@ -130,5 +130,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
     - [hpkp#5](https://github.com/helmetjs/hpkp/pull/5)
   - [Tyler Chong](https://github.com/Viltaria)
     - [hsts#14](https://github.com/helmetjs/hsts/pull/14)
+  - [Victor Brouk](https://github.com/vintik)
+    - [helmetjs.github.io#21](https://github.com/helmetjs/helmetjs.github.io/pull/21)
   - [thernstig](https://github.com/thernstig)
     - [expect](https://github.com/helmetjs/helmet/commit/a276e608e24054ef538c1bb2a65ace7066d8f9e5)
