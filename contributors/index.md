@@ -3,6 +3,7 @@ layout: page
 title: Contributors
 permalink: /contributors/
 ---
+
 Helmet has help from a lot of contributors. Thanks to everyone on this list!
 
 - Creator: [Adam Baldwin](https://evilpacket.net)
@@ -124,6 +125,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Teppei Sato](https://github.com/teppeis)
     - [csp#4](https://github.com/helmetjs/csp/pull/4)
     - [csp#5](https://github.com/helmetjs/csp/pull/5)
+  - [thernstig](https://github.com/thernstig)
+    - [helmet#398](https://github.com/helmetjs/helmet/pull/398
   - [Timofey Dergachev](https://exeto.me/en/)
     - [hpkp#9](https://github.com/helmetjs/hpkp/pull/9)
   - Tom Delmas
