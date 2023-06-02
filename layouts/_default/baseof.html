@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8" />
+
+    {{ $title := cond (isset .Params "title") .Params.Title .Site.Title }}
+    {{ $description := cond (isset .Params "description") .Params.Description .Site.Params.SiteDescription }}
+
+    <title>{{ $title }}</title>
+
+    {{ $style := resources.Get "sass/index.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+    <meta name="description" content="{{ $description }}" />
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <meta name="og:title" content="{{ $title }}" />
+    <meta name="og:description" content="{{ $description }}" />
+    <meta name="og:type" content="website" />
+
+    <meta name="twitter:title" content="{{ $title }}" />
+    <meta name="twitter:description" content="{{ $description }}" />
+    <meta name="twitter:creator" content="{{ .Site.Params.Author }}" />
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  </head>
+  <body>
+    <a class="skip-to-content-link" href="#main">
+      Skip to content
+    </a>
+
+    <header>
+      <h1><a href="/">Helmet.js</a></h1>
+
+      <nav>
+        <a href="{{ ref . "/#get-started" }}">Get started</a>
+        <a href="{{ ref . "/#reference" }}">Reference</a>
+        <a href="{{ ref . "/faq" }}">FAQ</a>
+        <a href="https://www.npmjs.com/package/helmet" target="_blank">npm</a>
+        <a href="https://github.com/helmetjs/helmet" target="_blank">Source</a>
+      </nav>
+    </header>
+
+    <main id="main" class="container">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </body>
+</html>
+

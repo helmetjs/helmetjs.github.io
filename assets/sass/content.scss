@@ -1,0 +1,62 @@
+h2, h3, h4, h5, h6, p, ul, ol, pre {
+  margin-bottom: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 200%;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 150%;
+  margin-top: 4rem;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+ul,
+ol {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+ul > li {
+  list-style-type: square;
+}
+
+ol > li {
+  list-style-type: decimal;
+}
+
+li ul,
+li ol {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+details {
+  margin-bottom: 2em;
+  padding: 0 1em;
+  border: 1px solid var(--soft-color);
+  border-radius: 5px;
+}
+
+details[open] {
+  border-color: 1px solid var(--text-color);
+}

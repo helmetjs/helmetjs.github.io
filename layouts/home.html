@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ .Content }}
+
+  {{ $homeJsOptions := dict "minify" true "target" "es5" }}
+  {{ $homeJs := resources.Get "js/home.js" | js.Build $homeJsOptions }}
+  <script src="{{ $homeJs.RelPermalink }}"></script>
+{{ end }}

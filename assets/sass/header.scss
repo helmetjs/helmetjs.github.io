@@ -1,0 +1,30 @@
+header {
+  border-bottom: 1px solid var(--soft-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+
+  h1 {
+    margin: 0.5em 0;
+    font-size: 250%;
+    font-weight: 100;
+    text-transform: lowercase;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 2em;
+
+    > * {
+      padding: 0 1rem;
+    }
+  }
+}

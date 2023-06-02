@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: "Helvetica Neue", "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+pre, code {
+  font-family: Monaco, "Ubuntu Mono", Inconsolata, Consolas, monospace;
+}
+
+pre {
+  line-height: 1.4em;
+}
+
+.container {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.skip-to-content-link {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  transform: translateY(-100%);
+  background: var(--background-color);
+
+  &:focus {
+    transform: translateY(0%);
+  }
+}

@@ -1,0 +1,10 @@
+baseURL = 'https://helmetjs.github.io'
+languageCode = 'en-us'
+title = 'Helmet'
+disableKinds = ['taxonomy', 'term', 'sitemap']
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = 'onedark'

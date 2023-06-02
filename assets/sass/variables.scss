@@ -1,0 +1,15 @@
+:root {
+  --text-color: #333;
+  --background-color: #f7f7f7;
+  --accent-color: #000;
+  --soft-color: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #ddd;
+    --background-color: #333;
+    --accent-color: #fff;
+    --soft-color: #555;
+  }
+}
