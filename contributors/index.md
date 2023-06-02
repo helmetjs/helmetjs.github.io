@@ -11,6 +11,8 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
 - Lead maintainer: [Evan Hahn](https://evanhahn.com)
 
 - Other contributors
+  - [Abdullah Danyal Saeed](https://github.com/dani2819)
+    - [nocache#26](https://github.com/helmetjs/nocache/pull/26)
   - [Agam Dua](https://twitter.com/loopbackdev)
     - [csp#100](https://github.com/helmetjs/csp/pull/100)
   - [Alberto Gimeno](http://gimenete.net/)
