@@ -34,3 +34,5 @@ There are also other modules like Helmet for Node if you don't like us:
 
 * [hood](https://github.com/seanmonstar/hood)
 * [lusca](https://github.com/krakenjs/lusca)
+
+And finally, if you would rather not use Helmet, see [this guide]({{< ref "faq/you-might-not-need-helmet" >}}) which shows how to accomplish what Helmet does without installing anything new.
