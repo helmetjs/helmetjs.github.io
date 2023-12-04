@@ -8,5 +8,6 @@ title: "Frequently asked questions (FAQ)"
 - [What if I don't want to install Helmet?]({{< ref "faq/you-might-not-need-helmet" >}})
 - [How do I use Helmet without Express?]({{< ref "faq/use-without-express" >}})
 - [How do I upgrade from Helmet 3 to Helmet 4?]({{< ref "faq/helmet-4-upgrade" >}})
+- [How do I set a Content Security Policy nonce?]({{< ref "faq/csp-nonce-example" >}})
 - [How do I set both `Content-Security-Policy` and `Content-Security-Policy-Report-Only` headers?](https://github.com/helmetjs/helmet/issues/351#issuecomment-1015498560)
 - [Who made Helmet?]({{< ref "faq/contributors" >}})
