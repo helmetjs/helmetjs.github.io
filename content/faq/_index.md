@@ -12,4 +12,5 @@ title: "Frequently asked questions (FAQ)"
 - [How do I set both `Content-Security-Policy` and `Content-Security-Policy-Report-Only` headers?](https://github.com/helmetjs/helmet/issues/351#issuecomment-1015498560)
 - [How should I use Helmet with non-document responses?]({{< ref "faq/non-documents" >}})
 - [How do I disable blocking with the `X-XSS-Protection` header?]({{< ref "faq/x-xss-protection-disable-blocking" >}})
+- [How do I enable the `report` directive with the `X-XSS-Protection` header?]({{< ref "faq/x-xss-protection-report-directive" >}})
 - [Who made Helmet?]({{< ref "faq/contributors" >}})
