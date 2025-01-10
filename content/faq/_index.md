@@ -11,4 +11,5 @@ title: "Frequently asked questions (FAQ)"
 - [How do I set a Content Security Policy nonce?]({{< ref "faq/csp-nonce-example" >}})
 - [How do I set both `Content-Security-Policy` and `Content-Security-Policy-Report-Only` headers?](https://github.com/helmetjs/helmet/issues/351#issuecomment-1015498560)
 - [How should I use Helmet with non-document responses?]({{< ref "faq/non-documents" >}})
+- [How do I disable blocking with the `X-XSS-Protection` header?]({{< ref "faq/x-xss-protection-disable-blocking" >}})
 - [Who made Helmet?]({{< ref "faq/contributors" >}})
