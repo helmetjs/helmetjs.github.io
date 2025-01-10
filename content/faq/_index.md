@@ -14,4 +14,5 @@ title: "Frequently asked questions (FAQ)"
 - [How do I set a custom `X-Powered-By` header?]({{< ref "faq/custom-x-powered-by" >}})
 - [How do I disable blocking with the `X-XSS-Protection` header?]({{< ref "faq/x-xss-protection-disable-blocking" >}})
 - [How do I enable the `report` directive with the `X-XSS-Protection` header?]({{< ref "faq/x-xss-protection-report-directive" >}})
+- [How do I use `X–Frame–Options`'s `ALLOW–FROM` directive?]({{< ref "faq/x-frame-options-allow-from-directive" >}})
 - [Who made Helmet?]({{< ref "faq/contributors" >}})
