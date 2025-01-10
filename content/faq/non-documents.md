@@ -6,7 +6,7 @@ Helmet is designed to be easy to use. It sets its security headers for all respo
 
 Unfortunately, this can lead to unnecessarily headers being set for some responses, hampering performance slightly. For example, you don't need to set the `Content-Security-Policy` header when responding with a PNG image, but you probably _do_ want to set the `Strict-Transport-Security` header.
 
-Here is a list of Helmet headers that are *usually safe to omit unless you're responding with HTML*:
+Here is a list of Helmet headers that are _usually safe to omit unless you're responding with HTML_:
 
 - `Content-Security-Policy`
 - `Cross-Origin-Embedder-Policy`

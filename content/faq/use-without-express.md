@@ -1,6 +1,7 @@
 ---
 title: "How to use Helmet without Express"
 ---
+
 Helmet is [Connect-style](https://www.npmjs.com/package/connect) middleware, which means it's compatible with web frameworks like Express and Connect.
 
 People have ported Helmet to other frameworks like [Koa](https://github.com/venables/koa-helmet) and [Fastify](https://github.com/fastify/fastify-helmet).
@@ -18,7 +19,7 @@ const server = http.createServer((req, res) => {
     if (err) {
       res.statusCode = 500;
       res.end(
-        "Helmet failed for some unexpected reason. Was it configured correctly?"
+        "Helmet failed for some unexpected reason. Was it configured correctly?",
       );
       return;
     }

@@ -1,0 +1,6 @@
+{
+  "fmt": {
+    "proseWrap": "preserve",
+    "exclude": ["public/", "layouts/**/*.html"]
+  }
+}

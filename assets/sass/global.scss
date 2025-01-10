@@ -1,9 +1,17 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: var(--text-color);
   background: var(--background-color);
-  font-family: "Helvetica Neue", "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-family:
+    "Helvetica Neue",
+    "Segoe UI",
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 20px;
   line-height: 2em;
   -webkit-font-smoothing: antialiased;

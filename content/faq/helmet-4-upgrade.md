@@ -1,6 +1,7 @@
 ---
 title: "Helmet 4 upgrade guide"
 ---
+
 Several things were changed in Helmet 4.
 
 ### How do I upgrade?
