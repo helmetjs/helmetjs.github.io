@@ -2,31 +2,17 @@
 title: "Helmet.js"
 ---
 
-Helmet helps secure Express apps by setting HTTP response headers.
-
-## Get started
-
-Here's a sample Express app that uses Helmet:
+Help secure Express apps by setting HTTP response headers.
 
 ```javascript
-import express from "express";
 import helmet from "helmet";
 
 const app = express();
 
-// Use Helmet!
 app.use(helmet());
-
-app.get("/", (req, res) => {
-  res.send("Hello world!");
-});
-
-app.listen(8000);
 ```
 
-You can also `require("helmet")` if you prefer.
-
-By default, Helmet sets the following headers:
+Helmet sets the following headers by default:
 
 - [`Content-Security-Policy`](#content-security-policy): A powerful allow-list of what can happen on your page which mitigates many attacks
 - [`Cross-Origin-Opener-Policy`](#cross-origin-opener-policy): Helps process-isolate your page
@@ -45,8 +31,7 @@ By default, Helmet sets the following headers:
 Each header can be configured. For example, here's how you configure the `Content-Security-Policy` header:
 
 ```js
-// This sets custom options for the
-// Content-Security-Policy header.
+// Configure the Content-Security-Policy header.
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -61,8 +46,7 @@ app.use(
 Headers can also be disabled. For example, here's how you disable the `Content-Security-Policy` and `X-Download-Options` headers:
 
 ```js
-// This disables the Content-Security-Policy
-// and X-Download-Options headers.
+// Disable the Content-Security-Policy and X-Download-Options headers
 app.use(
   helmet({
     contentSecurityPolicy: false,
@@ -84,7 +68,7 @@ Content-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' http
 
 The `Content-Security-Policy` header mitigates a large number of attacks, such as [cross-site scripting][XSS]. See [MDN's introductory article on Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
 
-This header is powerful but likely requires some configuration.
+This header is powerful but likely requires some configuration for your specific app.
 
 To configure this header, pass an object with a nested `directives` object. Each key is a directive name in camel case (such as `defaultSrc`) or kebab case (such as `default-src`). Each value is an array (or other iterable) of strings or functions for that directive. If a function appears in the array, it will be called with the request and response objects.
 
@@ -105,7 +89,8 @@ app.use(
 
 ```js
 // Sets the `script-src` directive to
-// "'self' 'nonce-e33...'" (or similar)
+// "'self' 'nonce-e33cc...'"
+// (or similar)
 app.use((req, res, next) => {
   res.locals.cspNonce = crypto.randomBytes(32).toString("hex");
   next();
@@ -142,7 +127,7 @@ app.use(
 );
 ```
 
-You can get the default directives object with `helmet.contentSecurityPolicy.getDefaultDirectives()`. Here is the default policy (whitespace added for readability):
+You can get the default directives object with `helmet.contentSecurityPolicy.getDefaultDirectives()`. Here is the default policy (formatted for readability):
 
 ```
 default-src 'self';
@@ -160,7 +145,7 @@ upgrade-insecure-requests
 
 The `default-src` directive can be explicitly disabled by setting its value to `helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc`, but this is not recommended.
 
-You can set the [`Content-Security-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only) instead.
+You can set the [`Content-Security-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only) instead:
 
 ```javascript
 // Sets the Content-Security-Policy-Report-Only header
@@ -261,7 +246,7 @@ Default:
 Cross-Origin-Resource-Policy: same-origin
 ```
 
-The `Cross-Origin-Resource-Policy` header blocks others from loading your resources cross-origin in some cases. For more, see ["Consider deploying Cross-Origin Resource Policy](https://resourcepolicy.fyi/) and [MDN's article on this header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
+The `Cross-Origin-Resource-Policy` header blocks others from loading your resources cross-origin in some cases. For more, see ["Consider deploying Cross-Origin Resource Policy"](https://resourcepolicy.fyi/) and [MDN's article on this header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
 ```js
 // Sets "Cross-Origin-Resource-Policy: same-origin"
@@ -375,17 +360,17 @@ You can use this as standalone middleware with `app.use(helmet.referrerPolicy())
 Default:
 
 ```http
-Strict-Transport-Security: max-age=15552000; includeSubDomains
+Strict-Transport-Security: max-age=31536000; includeSubDomains
 ```
 
 The `Strict-Transport-Security` header tells browsers to prefer HTTPS instead of insecure HTTP. See [the documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) for more.
 
 ```js
-// Sets "Strict-Transport-Security: max-age=15552000; includeSubDomains"
+// Sets "Strict-Transport-Security: max-age=31536000; includeSubDomains"
 app.use(helmet());
 ```
 
-`maxAge` is the number of seconds browsers should remember to prefer HTTPS. If passed a non-integer, the value is rounded down. It defaults to `15552000`, which is 180 days.
+`maxAge` is the number of seconds browsers should remember to prefer HTTPS. If passed a non-integer, the value is rounded down. It defaults to 365 days.
 
 `includeSubDomains` is a boolean which dictates whether to include the `includeSubDomains` directive, which makes this policy extend to subdomains. It defaults to `true`.
 
@@ -431,6 +416,8 @@ app.use(
   }),
 );
 ```
+
+You may wish to disable this header for local development, as it can make your browser force redirects from `http://localhost` to `https://localhost`, which may not be desirable if you develop multiple apps using `localhost`. See [this issue](https://github.com/helmetjs/helmet/issues/451) for more discussion.
 
 You can use this as standalone middleware with `app.use(helmet.strictTransportSecurity())`.
 
