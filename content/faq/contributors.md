@@ -44,6 +44,7 @@ Helmet has help from a lot of contributors. Thanks to everyone on this list!
   - [Eli Golding](https://github.com/eligolding)
     - [frameguard#4](https://github.com/helmetjs/frameguard/pull/4)
   - [Frazer Smith](https://github.com/Fdawgs)
+    - [helmet#486](https://github.com/helmetjs/helmet/pull/486)
     - [helmet#308](https://github.com/helmetjs/helmet/pull/308)
     - [helmet#312](https://github.com/helmetjs/helmet/pull/312)
     - [helmet#313](https://github.com/helmetjs/helmet/pull/313)
