@@ -2,7 +2,7 @@
 title: "Helmet.js"
 ---
 
-Help secure Express apps by setting HTTP response headers.
+Security headers for Express.js apps.
 
 ```javascript
 import helmet from "helmet";
@@ -28,7 +28,7 @@ Helmet sets the following headers by default:
 - [`X-Powered-By`](#x-powered-by): Info about the web server. Removed because it could be used in simple attacks
 - [`X-XSS-Protection`](#x-xss-protection): Legacy header that tries to mitigate [XSS attacks][XSS], but makes things worse, so Helmet disables it
 
-Each header can be configured. For example, here's how you configure the `Content-Security-Policy` header:
+Each header can be configured. For example, here's how to configure the `Content-Security-Policy` header:
 
 ```js
 // Configure the Content-Security-Policy header.
@@ -156,6 +156,23 @@ app.use(
         /* ... */
       },
       reportOnly: true,
+    },
+  }),
+);
+```
+
+`upgrade-insecure-requests`, a directive that causes browsers to upgrade HTTP to HTTPS, is set by default. You may wish to avoid this in development, as you may not be developing with HTTPS. Notably, Safari will upgrade `http://localhost` to `https://localhost`, which can cause problems. To work around this, you may wish to disable the `upgrade-insecure-requests` directive in development. For example:
+
+```js
+const isDevelopment = app.get("env") === "development";
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        // Disable upgrade-insecure-requests in development.
+        "upgrade-insecure-requests": isDevelopment ? null : [],
+      },
     },
   }),
 );
