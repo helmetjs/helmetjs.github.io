@@ -1,0 +1,43 @@
+pre {
+    position: relative !important;
+    padding-top: 2.5em;
+    overflow-x: auto;
+}
+
+.copy-code-button {
+    position: absolute !important;
+    top: 8px;
+    right: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.2s ease;
+    margin: 0;
+    pointer-events: auto;
+}
+
+.copy-code-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.copy-code-button:active {
+    transform: scale(0.95);
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    padding-top: 0;
+    margin: 0;
+    background: none;
+    position: static !important;
+    overflow-x: auto;
+}
