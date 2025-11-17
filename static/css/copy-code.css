@@ -1,35 +1,37 @@
 pre {
     position: relative !important;
-    padding-top: 2.5em;
+    padding-top: 2.8em;
     overflow-x: auto;
 }
 
 .copy-code-button {
     position: absolute !important;
-    top: 8px;
-    right: 8px;
-    padding: 6px 10px;
-    font-size: 14px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    z-index: 100;
-    transition: all 0.2s ease;
-    margin: 0;
-    pointer-events: auto;
+    z-index: 300;
+    transition: all 0.15s ease;
 }
 
 .copy-code-button:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.18);
     transform: scale(1.05);
 }
 
 .copy-code-button:active {
-    transform: scale(0.95);
+    transform: scale(0.85);
 }
 
 pre code {
