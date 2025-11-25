@@ -49,6 +49,43 @@ pre {
   border-radius: 5px;
   overflow-x: auto;
 }
+.code-block-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
 
 details {
   margin-bottom: 2em;
@@ -58,5 +95,5 @@ details {
 }
 
 details[open] {
-  border-color: 1px solid var(--text-color);
+  border-color: var(--text-color);
 }
