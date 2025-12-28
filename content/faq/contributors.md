@@ -1,7 +1,7 @@
 ---
 title: "Contributors"
 aliases:
-- /contributors
+  - /contributors
 ---
 
 Helmet has help from a lot of contributors. Thanks to everyone on this list!

@@ -1,7 +1,7 @@
 ---
 title: "See also"
 aliases:
-- /see-also
+  - /see-also
 ---
 
 Helmet only deals with HTTP headers, but there are a number of other helpful security modules for Express. As a disclaimer, Helmet's maintainers have not heavily audited these modules!
