@@ -27,7 +27,7 @@ As a special case, the `Content-Security-Policy` header can be set conditionally
 
 ```javascript
 app.use((req, res, next) => {
-  res.locals.cspNonce = crypto.randomBytes(16).toString("hex");
+  res.locals.cspNonce = crypto.randomBytes(32).toString("hex");
   next();
 });
 
