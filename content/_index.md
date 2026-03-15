@@ -191,7 +191,7 @@ You can use this as standalone middleware with `app.use(helmet.contentSecurityPo
 
 This header is not set by default.
 
-The `Cross-Origin-Embedder-Policy` header helps control what resources can be loaded cross-origin. See [MDN's article on this header](https://developer.cdn.mozilla.net/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) for more.
+The `Cross-Origin-Embedder-Policy` header helps control what resources can be loaded cross-origin. See [MDN's article on this header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) for more.
 
 ```js
 // Helmet does not set Cross-Origin-Embedder-Policy
@@ -523,7 +523,7 @@ Default:
 X-Download-Options: noopen
 ```
 
-The `X-Download-Options` header is specific to Internet Explorer 8. It forces potentially-unsafe downloads to be saved, mitigating execution of HTML in your site's context. For more, see [this old post on MSDN](https://docs.microsoft.com/en-us/archive/blogs/ie/ie8-security-part-v-comprehensive-protection).
+The `X-Download-Options` header is specific to Internet Explorer 8. It forces potentially-unsafe downloads to be saved, mitigating execution of HTML in your site's context. For more, see [this old post on MSDN](https://learn.microsoft.com/en-us/archive/blogs/ie/ie8-security-part-v-comprehensive-protection).
 
 This header takes no options and is set by default.
 
