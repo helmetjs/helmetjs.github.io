@@ -14,7 +14,7 @@ Helmet only deals with HTTP headers, but there are a number of other helpful sec
 
 This module also exists in other environments. Some are direct ports where others are similar modules.
 
-- ASP.NET: [NWebsec](https://docs.nwebsec.com/en/latest/index.html)
+- ASP.NET: [NWebsec](https://nwebsec.readthedocs.io/en/latest/index.html)
 - Crystal: [crystal-helmet](https://github.com/EvanHahn/crystal-helmet)
 - Dart: [shelf_helmet](https://github.com/jxstxn1/shelf_helmet)
 - Django (Python framework): [django-csp](https://django-csp.readthedocs.io/en/latest/)
@@ -23,7 +23,7 @@ This module also exists in other environments. Some are direct ports where other
 - Ember.js (JavaScript framework): [ember-cli-content-security-policy](https://github.com/rwjblue/ember-cli-content-security-policy/)
 - Fastify (Node framework): [fastify-helmet](https://github.com/fastify/fastify-helmet)
 - Flask (Python framework): [Talisman](https://github.com/GoogleCloudPlatform/flask-talisman)
-- Go: [secure](https://github.com/unrolled/secure); [secureheader](https://godoc.org/github.com/kr/secureheader)
+- Go: [secure](https://github.com/unrolled/secure); [secureheader](https://pkg.go.dev/github.com/kr/secureheader)
 - Hapi (Node framework): [blankie](https://github.com/nlf/blankie)
 - Koa (Node framework): [koa-helmet](https://github.com/venables/koa-helmet)
 - PHP: [Secure Headers](https://github.com/BePsvPT/secure-headers)
