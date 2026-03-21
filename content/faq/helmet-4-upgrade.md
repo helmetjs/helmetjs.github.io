@@ -53,4 +53,4 @@ The CSP middleware used to do browser sniffing in an attempt to set the best CSP
 
 This means that a few options were removed: `browserSniff`, `disableAndroid`, and `setAllHeaders`.
 
-If you want to set legacy headers, see the guide ["Setting legacy Content Security Policy headers in Helmet 4"](https://github.com/helmetjs/helmet/wiki/Setting-legacy-Content-Security-Policy-headers-in-Helmet-4).
+If you want to set legacy headers, see ["How do I set legacy Content Security Policy headers?"]({{< ref "faq/legacy-csp-headers" >}}).
