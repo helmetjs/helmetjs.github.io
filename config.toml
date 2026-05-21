@@ -1,7 +1,7 @@
 baseURL = 'https://helmetjs.github.io'
 locale = 'en-us'
 title = 'Helmet'
-disableKinds = ['taxonomy', 'term', 'sitemap']
+disableKinds = ['taxonomy', 'term', 'sitemap', 'rss']
 
 [markup]
   [markup.goldmark.renderer]
