@@ -8,7 +8,7 @@
 
     <title>{{ $title }}</title>
 
-    {{ $style := resources.Get "sass/index.scss" | toCSS | minify | fingerprint }}
+    {{ $style := resources.Get "css/index.css" | css.Build (dict "minify" true) | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
     <meta name="description" content="{{ $description }}" />

@@ -8,10 +8,10 @@ h2 {
   font-size: 200%;
   margin-top: 5rem;
   margin-bottom: 2rem;
+}
 
-  &:first-child {
-    margin-top: 0;
-  }
+h2:first-child {
+  margin-top: 0;
 }
 
 h3 {

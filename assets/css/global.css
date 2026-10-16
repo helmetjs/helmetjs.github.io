@@ -48,8 +48,8 @@ em {
   position: absolute;
   transform: translateY(-100%);
   background: var(--background-color);
+}
 
-  &:focus {
-    transform: translateY(0%);
-  }
+.skip-to-content-link:focus {
+  transform: translateY(0%);
 }
